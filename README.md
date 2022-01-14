@@ -10,3 +10,11 @@ Small Project using LAMP Stack
  - Ainsley Dalton
  - Nawras Rawas Qalaji
  - Zhichen Xu
+
+## To-Do
+
+- Develop frontend, backend, and API
+- Finalize roles
+- Create a timeline/frame
+- Decide on team name and hosting service
+- 
