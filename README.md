@@ -14,6 +14,10 @@ Small Project using LAMP Stack
 ## To-Do
 
 - Develop frontend, backend, and API
-- Finalize roles
-- Create a timeline/frame
-- 
+
+## Timeline
+
+- Week 1 (01/21): Login/Sign up
+- Week 2 (01/28): Everything contacts feature
+- Week 3 (02/04): Beautifying / optimizing and presentation
+- Week 4 (02/11): More professionalizing and finish presentation
