@@ -10,9 +10,20 @@ create table users
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
   `username` varchar(50) not null default '',
+  `phone` int not null default '',
   `date_created` datetime not null default current_timestamp,
   `last_logged_in` datetime not null default current_timestamp,
   `password` varchar(50) not null default '[insert something]', /* Not sure if this is the right way to implement this */
-  primary key ('id')
+   primary key ('id')
+) engine = InnoDB;
+
+create table contacts 
+(
+  `id` int not null auto_increment,
+  `user_id` int not null default '0',
+  `first_name` varchar(50) not null default '',
+  `last_name` varchar(50) not null default '',
+  `phone` int not null default '',
+   primary key ('id')
 ) engine = InnoDB;
 
