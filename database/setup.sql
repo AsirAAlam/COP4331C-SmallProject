@@ -6,7 +6,7 @@ use database lamp;
 
 create table users
 (
-  `id` int not null auto_increment,
+  `user_id` int not null auto_increment,
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
   `username` varchar(50) not null default '',
@@ -14,16 +14,17 @@ create table users
   `date_created` datetime not null default current_timestamp,
   `last_logged_in` datetime not null default current_timestamp,
   `password` varchar(50) not null default '[insert something]', /* Not sure if this is the right way to implement this */
-   primary key ('id')
+   primary key ('user_id')
 ) engine = InnoDB;
 
 create table contacts 
 (
-  `id` int not null auto_increment,
-  `user_id` int not null default '0',
+  `contact_id` int not null auto_increment,
+  `user_id` int not null,
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
   `phone` int not null default '',
-   primary key ('id')
+   primary key ('contact_id'),
+   foreign key ('user_id') references users('user_id')
 ) engine = InnoDB;
 
