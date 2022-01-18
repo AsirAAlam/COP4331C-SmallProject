@@ -4,7 +4,7 @@
 	$first_name = $inData["first_name"];
 	$last_name = $inData["last_name"];
 	$phone = $inData["phone"]
-	$username = $inData["userName"];
+	$username = $inData["username"];
 	$password = $inData["password"];
 
 	$conn = new mysqli("localhost", "lampy", "password123", "lamp");
@@ -14,8 +14,8 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into users (first_name, last_name, phone, userName, password) VALUES(?,?,?,?,?)");
-		$stmt->bind_param("ssiss", $first_name, $last_name, $phone, $userName, $password);
+		$stmt = $conn->prepare("INSERT into users (first_name, last_name, phone, username, password) VALUES(?,?,?,?,?)");
+		$stmt->bind_param("ssiss", $first_name, $last_name, $phone, $username, $password);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
