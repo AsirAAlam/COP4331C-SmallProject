@@ -3,9 +3,10 @@
 
 	$inData = getRequestInfo();
 
-	$id = 0;
-	$firstName = "";
-	$lastName = "";
+	$user_id = 0;
+	$first_name = "";
+	$last_name = "";
+	$phone = 0;
 
 	$conn = new mysqli("localhost", "lampy", "password123", "lamp");
 	if( $conn->connect_error )
@@ -14,14 +15,14 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE userName=? AND Password =?");
-		$stmt->bind_param("ss", $inData["userName"], $inData["password"]);
+		$stmt = $conn->prepare("SELECT user_id,first_name,last_name,phone FROM users WHERE username=? AND password =?");
+		$stmt->bind_param("ss", $inData["username"], $inData["password"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
 		if( $row = $result->fetch_assoc()  )
 		{
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+			returnWithInfo( $row['first_name'], $row['last_name'], $row['phone'], $row['user_id'] );
 		}
 		else
 		{
@@ -45,13 +46,13 @@
 
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"user_id":0,"first_name":"","last_name":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnWithInfo( $firstName, $lastName, $id )
+	function returnWithInfo( $first_name, $last_name, $phone, $user_id )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		$retValue = '{"user_id":' . $user_id . ',"first_name":"' . $first_name . '","last_name":"' . $last_name . '","phone":"' . $phone . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
