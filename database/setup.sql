@@ -2,7 +2,7 @@ create database lamp;
 create user lampy identified by 'P@ssw0rd';
 grant all privileges on lamp.* to 'lampy'@'localhost' identified by 'P@ssw0rd' with grant option;
 flush privileges;
-use database lamp;
+use lamp;
 
 create table users
 (
