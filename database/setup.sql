@@ -1,6 +1,6 @@
 create database lamp;
-create user lampy identified by 'password123';
-grant all privileges on lamp.* to 'lampy'@'localhost' identified by 'Group8' with grant option;
+create user lampy identified by 'P@ssw0rd';
+grant all privileges on lamp.* to 'lampy'@'localhost' identified by 'P@ssw0rd' with grant option;
 flush privileges;
 use database lamp;
 
@@ -13,7 +13,7 @@ create table users
   `phone` int not null default '',
   `date_created` datetime not null default current_timestamp,
   `last_logged_in` datetime not null default current_timestamp,
-  `password` varchar(50) not null default 'password',
+  `password` varchar(50) not null default '',
    primary key ('user_id')
 ) engine = InnoDB;
 
