@@ -10,7 +10,7 @@ create table users
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
   `username` varchar(50) not null default '',
-  `phone` int not null,
+  `phone` varchar(50) not null,
   `date_created` datetime not null default current_timestamp,
   `last_logged_in` datetime not null default current_timestamp,
   `password` varchar(50) not null default '',
@@ -23,7 +23,7 @@ create table contacts
   `user_id` int not null,
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
-  `phone` int not null,
+  `phone` varchar(50) not null,
    primary key (contact_id),
    foreign key (user_id) references users(user_id)
 ) engine = InnoDB;
