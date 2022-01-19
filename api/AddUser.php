@@ -3,11 +3,11 @@
 
 	$first_name = $inData["first_name"];
 	$last_name = $inData["last_name"];
-	$phone = $inData["phone"]
+	$phone = $inData["phone"];
 	$username = $inData["username"];
 	$password = $inData["password"];
 
-	$conn = new mysqli("localhost", "lampy", "password123", "lamp");
+	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );

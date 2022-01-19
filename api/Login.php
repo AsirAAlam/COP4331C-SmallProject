@@ -8,7 +8,7 @@
 	$last_name = "";
 	$phone = 0;
 
-	$conn = new mysqli("localhost", "lampy", "password123", "lamp");
+	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );
