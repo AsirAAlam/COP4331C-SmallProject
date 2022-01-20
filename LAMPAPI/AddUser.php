@@ -14,12 +14,26 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into users (first_name, last_name, phone, username, password) VALUES(?,?,?,?,?)");
-		$stmt->bind_param("ssiss", $first_name, $last_name, $phone, $username, $password);
-		$stmt->execute();
-		$stmt->close();
-		$conn->close();
-		returnWithError("");
+    $srch = $conn->prepare("SELECT * FROM users WHERE username=?");
+		$srch->bind_param("s", $username);
+		$srch->execute();
+		$result = $srch->get_result();
+
+    if ($result->fetch_assoc())
+    {
+      returnWithError("The username already exists.");
+    }
+    else
+    {
+      $stmt = $conn->prepare("INSERT into users (first_name, last_name, phone, username, password) VALUES(?,?,?,?,?)");
+      $stmt->bind_param("sssss", $first_name, $last_name, $phone, $username, $password);
+      $stmt->execute();
+      $stmt->close();
+      returnWithError("User added.");
+    }
+
+    $srch->close();
+    $conn->close();
 	}
 
 	function getRequestInfo()
