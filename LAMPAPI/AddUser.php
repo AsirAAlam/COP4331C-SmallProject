@@ -29,7 +29,7 @@
       $stmt->bind_param("sssss", $first_name, $last_name, $phone, $username, $password);
       $stmt->execute();
       $stmt->close();
-      returnWithError("User added.");
+      returnWithError("");
     }
 
     $srch->close();

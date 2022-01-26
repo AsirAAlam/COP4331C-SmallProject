@@ -1,10 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 
-  $user_id = $inData["user_id"];
-	$first_name = $inData["first_name"];
-	$last_name = $inData["last_name"];
-	$phone = $inData["phone"];
+  $contact_id = $inData["contact_id"];
 
 	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if ($conn->connect_error)
@@ -13,8 +10,8 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into contacts (user_id, first_name, last_name, phone) VALUES(?,?,?,?)");
-		$stmt->bind_param("isss", $user_id, $first_name, $last_name, $phone);
+		$stmt = $conn->prepare("DELETE FROM contacts WHERE contact_id=?");
+		$stmt->bind_param("i", $contact_id);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
