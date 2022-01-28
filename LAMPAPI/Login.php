@@ -8,7 +8,7 @@
 	$first_name = "";
 	$last_name = "";
 	$phone = 0;
-	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if( $conn->connect_error )
 	{
@@ -16,15 +16,15 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT user_id,first_name,last_name,phone FROM users WHERE username=? AND password =?");
+		$stmt = $conn->prepare("SELECT user_id,first_name,last_name,phone,last_logged_in FROM users WHERE username=? AND password =?");
 		$stmt->bind_param("ss", $inData["username"], $inData["password"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
 		if( $row = $result->fetch_assoc()  )
 		{
-			$conn->query('UPDATE users SET last_logged_in = current_timestamp WHERE username = $inData["username"] AND password = $inData["password"]');
-			returnWithInfo( $row['first_name'], $row['last_name'], $row['phone'], $row['user_id'], date("Y-m-d H:i:s", time()) );
+			$conn->query("UPDATE users SET last_logged_in = current_timestamp WHERE username = '" . $inData["username"] . "' AND password = '" . $inData["password"] . "'");
+			returnWithInfo( $row['first_name'], $row['last_name'], $row['phone'], $row['user_id'], $row['last_logged_in'] );
 		}
 		else
 		{
