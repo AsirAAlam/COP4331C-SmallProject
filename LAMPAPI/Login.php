@@ -1,5 +1,6 @@
 
 <?php
+	date_default_timezone_set('America/New_York');
 
 	$inData = getRequestInfo();
 
@@ -7,7 +8,7 @@
 	$first_name = "";
 	$last_name = "";
 	$phone = 0;
-
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if( $conn->connect_error )
 	{
@@ -22,7 +23,8 @@
 
 		if( $row = $result->fetch_assoc()  )
 		{
-			returnWithInfo( $row['first_name'], $row['last_name'], $row['phone'], $row['user_id'] );
+			$conn->query('UPDATE users SET last_logged_in = current_timestamp WHERE username = $inData["username"] AND password = $inData["password"]');
+			returnWithInfo( $row['first_name'], $row['last_name'], $row['phone'], $row['user_id'], date("Y-m-d H:i:s", time()) );
 		}
 		else
 		{
@@ -50,9 +52,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnWithInfo( $first_name, $last_name, $phone, $user_id )
+	function returnWithInfo( $first_name, $last_name, $phone, $user_id, $last_logged_in )
 	{
-		$retValue = '{"user_id":' . $user_id . ',"first_name":"' . $first_name . '","last_name":"' . $last_name . '","phone":"' . $phone . '","error":""}';
+		$retValue = '{"user_id":' . $user_id . ',"first_name":"' . $first_name . '","last_name":"' . $last_name . '","phone":"' . $phone . '","last_logged_in":"' . $last_logged_in . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 
