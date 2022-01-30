@@ -97,20 +97,17 @@ function doRegister()
 			if (this.readyState == 4 && this.status == 200) 
 			{
         let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.error;
-        document.getElementById("signupResult").innerHTML = "101";
+				error = jsonObject.error;
         
 				if ( error != "" )
 				{		
           document.getElementById("signupResult").innerHTML = "Username already exists.";
 					return;
 				}
-        document.getElementById("signupResult").innerHTML = "108";
         
 				saveCookie();
         
 				window.location.href = "./index.html";
-        document.getElementById("signupResult").innerHTML = "113";
 			}
 		};
 		xhr.send(jsonPayload);
