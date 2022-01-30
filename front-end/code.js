@@ -71,8 +71,8 @@ function doRegister()
 	let inputPassword = document.getElementById("passwordInputRegister").value;
 //	var hash = md5( password );
 
-	document.getElementById("signupResult").innerHTML = "";
-
+	document.getElementById("signupResult").innerHTML = "clicked register";
+  
 	let tmp = {
     first_name:inputFirstname,
     last_name:inputLastname,
@@ -80,34 +80,37 @@ function doRegister()
     username:inputUsername,
     password:inputPassword
   };
-//	var tmp = {login:login,password:hash};
-
+  //	var tmp = {login:login,password:hash};
+  
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/AddUser.' + extension;
-
+  
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
-		xhr.onreadystatechange = function() 
+    xhr.onreadystatechange = function() 
 		{
       // document.getElementById("signupResult").innerHTML = this.status;
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );
+        let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.error;
-		
+        document.getElementById("signupResult").innerHTML = "101";
+        
 				if ( error != "" )
 				{		
-					document.getElementById("signupResult").innerHTML = "Username already exists.";
+          document.getElementById("signupResult").innerHTML = "Username already exists.";
 					return;
 				}
-
+        document.getElementById("signupResult").innerHTML = "108";
+        
 				saveCookie();
-	
+        
 				window.location.href = "./index.html";
+        document.getElementById("signupResult").innerHTML = "113";
 			}
 		};
 		xhr.send(jsonPayload);
