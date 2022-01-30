@@ -11,8 +11,8 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	let inputUsername = document.getElementById("loginName").value;
-	let inputPassword = document.getElementById("loginPassword").value;
+	let inputUsername = document.getElementById("usernameInput").value;
+	let inputPassword = document.getElementById("passwordInput").value;
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
@@ -63,25 +63,28 @@ function doLogin()
 }
 
 function doRegister()
-{
-	userId = 0;
-	firstName = "";
-	lastName = "";
-	
-	let inputUsername = document.getElementById("loginName").value;
-	let inputPassword = document.getElementById("loginPassword").value;
+{	
+	let inputFirstname = document.getElementById("firstNameInputRegister").value;
+	let inputLastname = document.getElementById("lastNameInputRegister").value;
+	let inputPhone = document.getElementById("phoneInputRegister").value;
+	let inputUsername = document.getElementById("usernameInputRegister").value;
+	let inputPassword = document.getElementById("passwordInputRegister").value;
 //	var hash = md5( password );
-	
-	document.getElementById("loginResult").innerHTML = "";
+
+	document.getElementById("signupResult").innerHTML = "";
 
 	let tmp = {
+    first_name:inputFirstname,
+    last_name:inputLastname,
+    phone:inputPhone,
     username:inputUsername,
     password:inputPassword
   };
 //	var tmp = {login:login,password:hash};
+
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/Login.' + extension;
+	let url = urlBase + '/AddUser.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -90,32 +93,28 @@ function doRegister()
 	{
 		xhr.onreadystatechange = function() 
 		{
-      document.getElementById("loginResult").innerHTML = this.status;
+      // document.getElementById("signupResult").innerHTML = this.status;
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.user_id;
+				userId = jsonObject.error;
 		
-				if( userId < 1 )
+				if ( error != "" )
 				{		
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					document.getElementById("signupResult").innerHTML = "Username already exists.";
 					return;
 				}
-		
-				firstName = jsonObject.first_name;
-				firstName = jsonObject.last_name;
-        userId = jsonObject.user_id;
 
 				saveCookie();
 	
-				window.location.href = "./contact_manager.html";
+				window.location.href = "./index.html";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("signupResult").innerHTML = err.message;
 	}
 }
 

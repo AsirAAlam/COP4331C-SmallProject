@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript" src="code.js"></script>
+    <!-- <link rel="stylesheet" tyle="text/css" href="style.css" /> -->
     <style>
-    body{
-      text-align: center;
-    }
+      body{
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <h1 style="text-align: center;">LAMPorghini.</h1>
-    <h2>Create an Account!</h2>
-
-    <form action="php/AddUser.php">
-      First Name: <input type="text"><br><br>
-      Last Name: <input type="text"><br><br>
-      Phone Number: <input type="text"><br><br>
-      Username: <input type="text"><br><br>
-      Password: <input type="text"><br><br>
-    </form>
-
-    <button id="registerButton" class="big-button" onclick="doRegister();">Signup</button>
-
-    <form action="http://cop4331group8.xyz/index.html">
-      <center>
-        <input type="submit" value="Log in!" />
-      </center>
-    </form>
+    <div class="registerbox">
+      <h1 style="text-align: center;">LAMPorghini.</h1>
+      <h2>Create an Account!</h2>
+  
+      <input type="text" id="firstNameInputRegister" name="" placeholder="Enter firstname"/>
+      <input type="text" id="lastNameInputRegister" name="" placeholder="Enter lastname"/>
+      <input type="text" id="phoneInputRegister" name="" placeholder="Enter phone"/>
+      <input type="text" id="usernameInputRegister" name="" placeholder="Enter username"/>
+      <input type="text" id="passwordInputRegister" name="" placeholder="Enter password"/>
+  
+      <button id="registerButton" class="big-button" onclick="doRegister();">Register</button>
+      <button id="gotoLoginButton" class="big-button" onclick="window.location.href='index.html'">Log in!</button>
+  
+      <span id="signupResult">signupResult</span>
+    </div>
   </body>
 </html>
