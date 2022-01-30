@@ -4,9 +4,6 @@
 	$user_id = $inData["user_id"];
 	$name = $inData["name"];
 
-	$name_arr = explode(" ", $name);
-	$target = $name_arr[0] . "%";
-
 	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if ($conn->connect_error)
 	{
@@ -14,8 +11,14 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT * FROM contacts WHERE first_name LIKE '$target'");
-		// $stmt->bind_param("s", $target);
+		$stmt = $conn->prepare("
+      SELECT * FROM contacts 
+      WHERE user_id=$user_id
+      AND (first_name LIKE '%$name%'
+      OR last_name LIKE '%$name%'
+      OR CONCAT(first_name, ' ', last_name) LIKE '%$name%')
+      ORDER BY first_name, last_name, phone, user_id, contact_id;
+    ");
 		$stmt->execute();
 		$result = $stmt->get_result();
 
@@ -26,19 +29,10 @@
 			$rows[] = $row;
 		}
 
-		if( $rows[0]  )
-		{
-			returnWithInfo( $rows[0]['first_name'], $rows[0]['last_name'], $rows[0]['phone'], $rows[0]['user_id']);
-			// returnWithError("Found");
-		}
-		else
-		{
-			returnWithError("No Records Found");
-		}
+    sendResultInfoAsJson(json_encode( $rows ));
 
 		$stmt->close();
 		$conn->close();
-		// returnWithError("4");
 	}
 
 	function getRequestInfo()
@@ -63,5 +57,4 @@
 		$retValue = '{"user_id":' . $user_id . ',"first_name":"' . $first_name . '","last_name":"' . $last_name . '","phone":"' . $phone . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
-
 ?>
