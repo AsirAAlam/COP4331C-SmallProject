@@ -62,6 +62,63 @@ function doLogin()
 	}
 }
 
+function doRegister()
+{
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	
+	let inputUsername = document.getElementById("loginName").value;
+	let inputPassword = document.getElementById("loginPassword").value;
+//	var hash = md5( password );
+	
+	document.getElementById("loginResult").innerHTML = "";
+
+	let tmp = {
+    username:inputUsername,
+    password:inputPassword
+  };
+//	var tmp = {login:login,password:hash};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Login.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+      document.getElementById("loginResult").innerHTML = this.status;
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.user_id;
+		
+				if( userId < 1 )
+				{		
+					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					return;
+				}
+		
+				firstName = jsonObject.first_name;
+				firstName = jsonObject.last_name;
+        userId = jsonObject.user_id;
+
+				saveCookie();
+	
+				window.location.href = "./contact_manager.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 	let minutes = 20;
