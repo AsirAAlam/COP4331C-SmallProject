@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript" src="code.js"></script>
     <!-- <link rel="stylesheet" tyle="text/css" href="style.css" /> -->
     <style>
@@ -14,16 +16,37 @@
       <h1 style="text-align: center;">LAMPorghini.</h1>
       <h2>Create an Account!</h2>
   
-      <input type="text" id="firstNameInputRegister" name="" placeholder="Enter firstname"/>
-      <input type="text" id="lastNameInputRegister" name="" placeholder="Enter lastname"/>
-      <input type="text" id="phoneInputRegister" name="" placeholder="Enter phone"/>
-      <input type="text" id="usernameInputRegister" name="" placeholder="Enter username"/>
-      <input type="text" id="passwordInputRegister" name="" placeholder="Enter password"/>
-  
-      <button id="registerButton" class="big-button" onclick="doRegister();">Register</button>
-      <button id="gotoLoginButton" class="big-button" onclick="window.location.href='index.html'">Log in!</button>
+    </div>
+    
+    <div class="container">
+      
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="firstNameInputRegister" placeholder="Enter firstname">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="lastNameInputRegister" placeholder="Enter lastname">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="phoneInputRegister" placeholder="Enter phone">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="usernameInputRegister" placeholder="Enter username">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="password" class="form-control" id="passwordInputRegister" placeholder="Enter password">
+      </div>
+      
+      <button id="registerButton" type="button" class="btn btn-primary" onclick="doRegister();">Register</button>
+      <button id="gotoLoginButton" type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Log in!</button>
   
       <span id="signupResult">signupResult</span>
+  
+
     </div>
+
   </body>
 </html>
