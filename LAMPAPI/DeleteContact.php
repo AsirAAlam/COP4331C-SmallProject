@@ -10,12 +10,22 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("DELETE FROM contacts WHERE contact_id=?");
-		$stmt->bind_param("i", $contact_id);
+    $stmt = $conn->prepare("SELECT contact_id FROM contacts WHERE contact_id=$contact_id");
 		$stmt->execute();
+		$result = $stmt->get_result();
+
+		if( $row = $result->fetch_assoc()  )
+		{
+			$conn->query("DELETE FROM contacts WHERE contact_id=$contact_id");
+			returnWithError("");
+		}
+		else
+		{
+			returnWithError("No Records Found");
+		}
+
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
 	}
 
 	function getRequestInfo()
