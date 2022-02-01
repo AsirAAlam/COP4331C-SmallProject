@@ -1,25 +1,63 @@
 h1 {
-	color: white;
+  color: white;
 }
 h2 {
-	color: white;
+  color: white;
 }
 body {
-	background-color: #003366; 
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+  background-color: #003366;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url("https://images.hdqwalls.com/wallpapers/lamborghini-in-flames-5k-5l.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: sans-serif;
+  background-attachment: fixed;
 }
 
+.tex {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 50px 50px;
+  background: url("https://blog.radware.com/wp-content/uploads/2018/11/AdobeStock_215123311-1.jpg");
+  opacity: 0.5;
+}
+
+button {
+  width: 40%;
+  margin: 10px;
+}
+
+h3 {
+  text-align: left;
+  margin-top: -30px;
+  padding: 0;
 }
