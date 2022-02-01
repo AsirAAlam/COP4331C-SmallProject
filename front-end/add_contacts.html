@@ -9,15 +9,22 @@
 
   <body>
     <h1>Add a Contact</h1>
-    
-    <form action = "AddContact.php">
-      <label for = "fname">First Name:</label>
-      <input type = "text" id = "fname"><br><br>
-      <label for = "lname">Last Name:</label>
-      <input type = "text" id = "lname"><br><br>
-      <label for = "phone">Phone Number:</label>
-      <input type = "text" id = "phone"><br><br>
-      <input type = "submit" value = "Submit">
-    </form>
+
+    <div class="container">
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="firstNameInputAddContact" placeholder="Enter firstname">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="lastNameInputAddContact" placeholder="Enter lastname">
+      </div>
+
+      <div class="mb-3 row">
+        <input type="text" class="form-control" id="phoneInputAddContact" placeholder="Enter phone">
+      </div>
+
+      <button id="addContactButton" type="button" class="btn btn-primary" onclick="doAddContact();">Add Contact</button>
+      <button id="addContactToContactManagerButton" type="button" class="btn btn-secondary" onclick="window.location.href='contact_manager.html'">Go Back</button>
+      <span id="addContactResult">addContactResult</span>
   </body>
 </html>
