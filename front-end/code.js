@@ -315,28 +315,3 @@ function searchContacts() {
     }
   });
 }
-
-// All the CSS styling for the table in this tutorial:
-// .scoreboardTable {
-// padding: 0;
-// margin: auto;
-// border-collapse: collapse;
-// width: 80%;
-// text-align: center;
-// color: whitesmoke;
-// }
-// .scoreboardTableHeaderRow {
-// color: darkorange;
-// font-weight: bold;
-// height: 50px;
-// }
-// .scoreboardTableBodyRow:nth-child(odd){background-color: rgba(128, 128, 128, 0.050);}
-// #latestUserScore {
-// background-color: crimson;
-// }
-// .scoreboardTableBodyRow:hover{
-// background-color: darkorange;
-// }
-// .scoreboardTable tr td {
-// height: 25px;
-// }
