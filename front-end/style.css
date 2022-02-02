@@ -9,6 +9,10 @@ body {
   background-attachment: fixed;
 }
 
+#contact_manager_body {
+  background-color: #3d6ea5;
+}
+
 .loginbox {
   width: 320px;
   height: 500px;
