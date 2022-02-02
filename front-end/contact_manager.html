@@ -1,40 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script type="text/javascript" src="code.js"></script>
-    <title>Team LAMPorghini!</title>
 
-    <style>
-      body {background-color: powderblue;}
-    </style>
-  </head>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="code.js"></script>
+  <title>Team LAMPorghini!</title>
 
-  <body id="contact_manager_body">
-    <div class="text-center">
-      <h1>LAMPorghini Contact Manager</h1>
-      <h3>Search By Full Name:</h3>
+  <style>
+    body {
+      background-color: #b0e0e6;
+    }
+
+    .contactTable {
+      padding: 0;
+      margin: auto;
+      border-collapse: collapse;
+      width: 80%;
+      text-align: center;
+      color: whitesmoke;
+      background-color: #328792;
+    }
+
+    .headerRow {
+      color: darkorange;
+      font-weight: bold;
+      height: 50px;
+    }
+
+    .bodyRow:nth-child(odd) {
+      background-color: rgba(128, 128, 128, 0.050);
+    }
+
+    #latestUserScore {
+      background-color: crimson;
+    }
+
+    .bodyRow:hover {
+      background-color: darkorange;
+    }
+
+    .contactTable tr td {
+      height: 25px;
+    }
+  </style>
+</head>
+
+<body id="contact_manager_body">
+  <div class="text-center">
+    <h1>LAMPorghini Contact Manager</h1>
+    <h3>Search By Full Name:</h3>
+  </div>
+
+  <div class="container">
+    <div class="mb-3 row">
+      <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
     </div>
-    
-    <div class="container">
-      <div class="mb-3 row">
-        <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
-      </div>
 
-      <button id="AddContact_ContactManager" type="button" class="btn btn-primary" onclick="window.location.href='add_contacts.html';">&plus;</button>
-      <button id="Search_ContactManager" type="button" class="btn btn-primary" onclick="searchContacts();">Search</button>
-      <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
-      <span id="searchResult">searchResult</span>
-    </div>
+    <button id="AddContact_ContactManager" type="button" class="btn btn-primary"
+      onclick="window.location.href='add_contacts.html';">&plus;</button>
+    <button id="Search_ContactManager" type="button" class="btn btn-primary" onclick="searchContacts();">Search</button>
+    <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
+    <span id="searchResult">searchResult</span>
+  </div>
 
 
-    <!-- Search Results are displayed in this div -->
-    <div id="contactList" class="container">
+  <!-- Search Results are displayed in this div -->
+  <div id="contactList" class="container">
 
-    </div>
+  </div>
 
-    <script type="text/javascript" src="code.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <script type="text/javascript" src="code.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
