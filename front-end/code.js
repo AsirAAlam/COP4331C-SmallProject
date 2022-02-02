@@ -266,7 +266,7 @@ function searchContacts()
 		document.getElementById("searchResult").innerHTML = err.message;
 	}
 
-  // Trying to bind enter key to search button, but only when cursor is in input box.
+  // Bind enter key to search button. Being weird.
   $("#searchKeywordInput").on('keyup', function (event) {
     if (event.keyCode === 13) {
       //  console.log("Enter key pressed!!!!!");
