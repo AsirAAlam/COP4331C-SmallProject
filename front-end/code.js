@@ -220,9 +220,7 @@ function doLogout()
 function searchContacts()
 {
 	let srch = document.getElementById("searchKeywordInput").value;
-	// document.getElementById("colorSearchResult").innerHTML = "";
-
-	let colorList = "";
+	document.getElementById("contactList").innerHTML = "";
 
   readCookie();
 
@@ -259,17 +257,6 @@ function searchContacts()
           list.appendChild(item);
         }
         document.getElementById("contactList").appendChild(list);
-
-				// for( let i=0; i<jsonObject.results.length; i++ )
-				// {
-				// 	colorList += jsonObject.results[i];
-				// 	if( i < jsonObject.results.length - 1 )
-				// 	{
-				// 		colorList += "<br />\r\n";
-				// 	}
-				// }
-
-				// document.getElementsByTagName("p")[0].innerHTML = colorList;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -279,4 +266,11 @@ function searchContacts()
 		document.getElementById("searchResult").innerHTML = err.message;
 	}
 
+  // Trying to bind enter key to search button, but only when cursor is in input box.
+  $("#searchKeywordInput").on('keyup', function (event) {
+    if (event.keyCode === 13) {
+      //  console.log("Enter key pressed!!!!!");
+       $("#Search_ContactManager").click();
+    }
+ });
 }
