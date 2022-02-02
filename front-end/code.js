@@ -127,7 +127,7 @@ function doAddContact()
 
 	document.getElementById("addContactResult").innerHTML = "clicked add contact2";
 
-  alert("hello");
+  alert(inputFirstname);
 
 	// let tmp = {
   //   first_name:inputFirstname,
