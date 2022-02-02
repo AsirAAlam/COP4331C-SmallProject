@@ -273,15 +273,23 @@ function searchContacts()
 	{
 		xhr.onreadystatechange = function()
 		{
-      console.log("readystate: " + this.readyState);
-      console.log("status: " + this.status);
+      // console.log("readystate: " + this.readyState);
+      // console.log("status: " + this.status);
 			if (this.readyState == 4 && this.status == 200)
 			{
 				document.getElementById("searchResult").innerHTML = "Contact(s) has been retrieved";
-				document.getElementById("searchResult").innerHTML = xhr.responseText;
-				let parsed = JSON.parse( xhr.responseText );
 
-        console.log("type: " + (typeof parsed));
+				let arrayOfContacts = JSON.parse( xhr.responseText );
+
+        var list = document.createElement("ul");
+
+        for (let i of arrayOfContacts)
+        {
+          var item = document.createElement("li");
+          item.innerHTML = i["user_id"] + " " + i["first_name"] + " " + i["last_name"];
+          list.appendChild(item);
+        }
+        document.getElementById("contactList").appendChild(list);
 
 				// for( let i=0; i<jsonObject.results.length; i++ )
 				// {
