@@ -47,6 +47,7 @@ function doLogin()
 
 				firstName = jsonObject.first_name;
 				firstName = jsonObject.last_name;
+        userId = jsonObject.user_id;
 				saveCookie();
 
 				window.location.href = "./contact_manager.html";
@@ -123,48 +124,51 @@ function doAddContact()
 	let inputPhone = document.getElementById("phoneInputAddContact").value;
 //	var hash = md5( password );
 
-	document.getElementById("addContactResult").innerHTML = "clicked add contact";
+	// document.getElementById("addContactResult").innerHTML = "clicked add contact";
+  readCookie();
+  alert("click");
+  console.log("name" + firstName);
 
-	let tmp = {
-    first_name:inputFirstname,
-    last_name:inputLastname,
-    phone:inputPhone,
-		user_id:userId
-  };
-  //	var tmp = {login:login,password:hash};
+	// let tmp = {
+  //   first_name:inputFirstname,
+  //   last_name:inputLastname,
+  //   phone:inputPhone,
+	// 	user_id:userId
+  // };
+  // //	var tmp = {login:login,password:hash};
 
-	let jsonPayload = JSON.stringify( tmp );
+	// let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddContact.' + extension;
+	// let url = urlBase + '/AddContact.' + extension;
 
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-    xhr.onreadystatechange = function()
-		{
-      // document.getElementById("signupResult").innerHTML = this.status;
-			if (this.readyState == 4 && this.status == 200)
-			{
-        let jsonObject = JSON.parse( xhr.responseText );
-				error = jsonObject.error;
+	// let xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, true);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// try
+	// {
+  //   xhr.onreadystatechange = function()
+	// 	{
+  //     // document.getElementById("signupResult").innerHTML = this.status;
+	// 		if (this.readyState == 4 && this.status == 200)
+	// 		{
+  //       let jsonObject = JSON.parse( xhr.responseText );
+	// 			error = jsonObject.error;
 
-				if ( error != "" )
-				{
-          document.getElementById("addContactResult").innerHTML = "Contact already exists.";
-					return;
-				}
+	// 			if ( error != "" )
+	// 			{
+  //         document.getElementById("addContactResult").innerHTML = "Contact already exists.";
+	// 				return;
+	// 			}
 
-				saveCookie();
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("addContactResult").innerHTML = err.message;
-	}
+	// 			saveCookie();
+	// 		}
+	// 	};
+	// 	xhr.send(jsonPayload);
+	// }
+	// catch(err)
+	// {
+	// 	document.getElementById("addContactResult").innerHTML = err.message;
+	// }
 }
 
 function saveCookie()
@@ -175,38 +179,38 @@ function saveCookie()
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
 
-// function readCookie()
-// {
-// 	userId = -1;
-// 	let data = document.cookie;
-// 	let splits = data.split(",");
-// 	for(var i = 0; i < splits.length; i++)
-// 	{
-// 		let thisOne = splits[i].trim();
-// 		let tokens = thisOne.split("=");
-// 		if( tokens[0] == "firstName" )
-// 		{
-// 			firstName = tokens[1];
-// 		}
-// 		else if( tokens[0] == "lastName" )
-// 		{
-// 			lastName = tokens[1];
-// 		}
-// 		else if( tokens[0] == "userId" )
-// 		{
-// 			userId = parseInt( tokens[1].trim() );
-// 		}
-// 	}
+function readCookie()
+{
+	userId = -1;
+	let data = document.cookie;
+	let splits = data.split(",");
+	for(var i = 0; i < splits.length; i++)
+	{
+		let thisOne = splits[i].trim();
+		let tokens = thisOne.split("=");
+		if( tokens[0] == "firstName" )
+		{
+			firstName = tokens[1];
+		}
+		else if( tokens[0] == "lastName" )
+		{
+			lastName = tokens[1];
+		}
+		else if( tokens[0] == "userId" )
+		{
+			userId = parseInt( tokens[1].trim() );
+		}
+	}
 
-// 	if( userId < 0 )
-// 	{
-// 		window.location.href = "index.html";
-// 	}
-// 	else
-// 	{
-// 		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
-// 	}
-// }
+	if( userId < 0 )
+	{
+		window.location.href = "index.html";
+	}
+	else
+	{
+		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+	}
+}
 
 // function doLogout()
 // {
