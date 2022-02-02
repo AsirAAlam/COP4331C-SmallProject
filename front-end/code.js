@@ -125,50 +125,52 @@ function doAddContact()
 	let inputPhone = document.getElementById("phoneInputAddContact").value;
 //	var hash = md5( password );
 
-	document.getElementById("addContactResult").innerHTML = "clicked add contact";
+	document.getElementById("addContactResult").innerHTML = "clicked add contact2";
 
-	let tmp = {
-    first_name:inputFirstname,
-    last_name:inputLastname,
-    phone:inputPhone,
-		user_id:userId
-  };
-  //	var tmp = {login:login,password:hash};
+  alert("hello");
 
-	let jsonPayload = JSON.stringify( tmp );
+	// let tmp = {
+  //   first_name:inputFirstname,
+  //   last_name:inputLastname,
+  //   phone:inputPhone,
+	// 	user_id:userId
+  // };
+  // //	var tmp = {login:login,password:hash};
 
-	let url = urlBase + '/AddContact.' + extension;
+	// let jsonPayload = JSON.stringify( tmp );
 
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-    xhr.onreadystatechange = function()
-		{
-      // document.getElementById("signupResult").innerHTML = this.status;
-			if (this.readyState == 4 && this.status == 200)
-			{
-        let jsonObject = JSON.parse( xhr.responseText );
-				error = jsonObject.error;
+	// let url = urlBase + '/AddContact.' + extension;
 
-				if ( error != "" )
-				{
-          document.getElementById("addContactResult").innerHTML = "Contact already exists.";
-					return;
-				}
+	// let xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, true);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// try
+	// {
+  //   xhr.onreadystatechange = function()
+	// 	{
+  //     // document.getElementById("signupResult").innerHTML = this.status;
+	// 		if (this.readyState == 4 && this.status == 200)
+	// 		{
+  //       let jsonObject = JSON.parse( xhr.responseText );
+	// 			error = jsonObject.error;
 
-				saveCookie();
+	// 			if ( error != "" )
+	// 			{
+  //         document.getElementById("addContactResult").innerHTML = "Contact already exists.";
+	// 				return;
+	// 			}
 
-				window.location.href = "./contact_manager.html";
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		document.getElementById("addContactResult").innerHTML = err.message;
-	}
+	// 			saveCookie();
+
+	// 			window.location.href = "./contact_manager.html";
+	// 		}
+	// 	};
+	// 	xhr.send(jsonPayload);
+	// }
+	// catch(err)
+	// {
+	// 	document.getElementById("addContactResult").innerHTML = err.message;
+	// }
 }
 
 function saveCookie()
