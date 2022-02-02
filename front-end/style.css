@@ -17,17 +17,27 @@ body {
 }
 
 .loginbox {
-  width: 320px;
-  height: 500px;
+  width: 350px;
+  height: 420px;
   /*background: #000;*/
   color: #fff;
-  top: 50%;
+  top: 42%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
-  background: url("https://blog.radware.com/wp-content/uploads/2018/11/AdobeStock_215123311-1.jpg");
+  background: rgba(191, 191, 191, 0.8);
+  border: 3px solid #555;
+}
+
+.loginbox h1 {
+  font-weight: bold;
+  color: black;
+}
+
+::placeholder {
+  color: black;
 }
 
 .avatar {
@@ -63,10 +73,10 @@ h2 {
   margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], /*输入格*/
+.loginbox input[type="text"],
 input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #ffff;
+  border: 1px solid black;
+  /*border-bottom: 2px solid black;*/
   background: transparent;
   outline: none;
   height: 40px;
@@ -74,12 +84,12 @@ input[type="password"] {
   font-size: 16px;
 }
 
-.loginbox input[type="submit"] /*按钮*/ {
+.loginbox input[type="submit"] {
   border: none;
   outline: none;
   width: 125px;
   height: 30px;
-  background: #3d6ea5;
+  background: rgb(15, 15, 15);
   color: #fff;
   font-size: 18px;
   border-radius: 20px;
@@ -99,7 +109,7 @@ input[type="password"] {
   display: inline-block;
   border-radius: 60px;
   cursor: pointer;
-  background: #3d6ea5;
+  background: rgb(15, 15, 15);
   color: #fff;
 }
 
@@ -111,14 +121,13 @@ a {
   margin-right: 4px;
 }
 
-.loginbox input[type="submit"]:hover/*Login按钮输入过后改变颜色*/ {
+.loginbox input[type="submit"]:hover {
   cursor: pointer;
-  background: #ffc187; /*按钮光标碰到之后改变的颜色*/
-  color: #000; /*按钮文字的颜色*/
+  background: #ffc187;
+  color: #000;
 }
 
 .loginbox a {
-  /*底下小字的背景颜色*/
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
@@ -126,17 +135,16 @@ a {
 }
 
 .loginbox a:hover {
-  /*小字的反应颜色*/
-  color: #3d6ea5;
+  color: rgb(15, 15, 15);
 }
 
 :root {
   --backgroundColor: rgba(246, 241, 209);
-  --colorShadeA: rgb(106, 163, 137);
-  --colorShadeB: rgb(121, 186, 156);
-  --colorShadeC: rgb(150, 232, 195);
-  --colorShadeD: rgb(187, 232, 211);
-  --colorShadeE: rgb(205, 255, 232);
+  --colorShadeA: rgb(245, 210, 115);
+  --colorShadeB: rgb(245, 190, 88);
+  --colorShadeC: rgb(245, 190, 88);
+  --colorShadeD: rgb(250, 229, 175);
+  --colorShadeE: rgb(232, 203, 130);
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
@@ -156,7 +164,7 @@ button {
   vertical-align: middle;
   text-decoration: none;
   font-size: 15px;
-  color: var(--colorShadeA);
+  color: black;
   font-weight: 700;
   text-transform: uppercase;
   font-family: inherit;
