@@ -9,7 +9,8 @@
 
   <style>
     body {
-      background-color: #b0e0e6;
+      /* background-color: #b0e0e6; */
+      background-color: #D9ED92;
     }
 
     .contactTable {
@@ -19,7 +20,7 @@
       width: 80%;
       text-align: center;
       color: whitesmoke;
-      background-color: #328792;
+      background-color: #1A759F;
     }
 
     .headerRow {
@@ -47,6 +48,10 @@
     .modifyContact {
       color:rgb(15, 15, 15);
     }
+
+    .primaryButton {
+      background-color: #52B69A;
+    }
   </style>
 </head>
 
@@ -61,9 +66,9 @@
       <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
     </div>
 
-    <button id="AddContact_ContactManager" type="button" class="btn btn-primary"
+    <button id="AddContact_ContactManager" type="button" class="btn btn-info"
       onclick="window.location.href='add_contacts.html';">&plus;</button>
-    <button id="Search_ContactManager" type="button" class="btn btn-primary" onclick="searchContacts();">Search</button>
+    <button id="Search_ContactManager" type="button" class="btn btn-info" onclick="searchContacts();">Search</button>
     <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
     <span id="searchResult">searchResult</span>
   </div>
