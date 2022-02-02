@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   background: url("https://www.ucf.edu/files/2020/03/ucf-zoom-pegasus3-1920x1080.jpg");
-  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   font-family: sans-serif;
   background-attachment: fixed;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  background-position: top;
 }
 
 #contact_manager_body {
