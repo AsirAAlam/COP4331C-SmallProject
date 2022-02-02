@@ -201,7 +201,7 @@ function doLogout() {
   window.location.href = "index.html";
 }
 
-let tableHeaders = ["First Name", "Last Name", "Phone"];
+let tableHeaders = ["First Name", "Last Name", "Phone", "", ""];
 
 function createContactsTable(contactListDiv) {
   while (contactListDiv.firstChild) contactListDiv.removeChild(contactListDiv.firstChild); // Remove all children from scoreboard div (if any)
@@ -248,7 +248,21 @@ function updateContactTable(arrayOfContacts) {
     let phone = document.createElement("td");
     phone.innerText = contact["phone"];
 
-    bodyRow.append(firstName, lastName, phone); // Append all 5 cells to the table row
+    let editCell = document.createElement("td");
+    let editButton = document.createElement("a");
+    editButton.className = "modifyContact";
+    editButton.innerText = "Edit";
+    editButton.href = "http://www.google.com";
+    editCell.append(editButton);
+
+    let delCell = document.createElement("td");
+    let delButton = document.createElement("a");
+    delButton.className = "modifyContact";
+    delButton.innerText = "Delete";
+    delButton.href = "http://www.google.com";
+    delCell.append(delButton);
+
+    bodyRow.append(firstName, lastName, phone, editCell, delCell); // Append all 5 cells to the table row
     contactTable.append(bodyRow); // Append the current row to the scoreboard table body
   };
 
