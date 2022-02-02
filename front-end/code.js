@@ -70,7 +70,7 @@ function doRegister()
 	let inputPassword = document.getElementById("passwordInputRegister").value;
 //	var hash = md5( password );
 
-	document.getElementById("signupResult").innerHTML = "clicked register";
+	// document.getElementById("signupResult").innerHTML = "clicked register";
 
 	let tmp = {
     first_name:inputFirstname,
