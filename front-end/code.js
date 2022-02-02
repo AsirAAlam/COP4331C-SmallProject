@@ -46,7 +46,7 @@ function doLogin()
 				}
 
 				firstName = jsonObject.first_name;
-				firstName = jsonObject.last_name;
+				lastName = jsonObject.last_name;
         userId = jsonObject.user_id;
 				saveCookie();
 
@@ -126,49 +126,43 @@ function doAddContact()
 
 	// document.getElementById("addContactResult").innerHTML = "clicked add contact";
   readCookie();
-  alert("click");
-  console.log("name" + firstName);
 
-	// let tmp = {
-  //   first_name:inputFirstname,
-  //   last_name:inputLastname,
-  //   phone:inputPhone,
-	// 	user_id:userId
-  // };
+	let tmp = {
+		user_id:userId,
+    first_name:inputFirstname,
+    last_name:inputLastname,
+    phone:inputPhone
+  };
   // //	var tmp = {login:login,password:hash};
 
-	// let jsonPayload = JSON.stringify( tmp );
+	let jsonPayload = JSON.stringify( tmp );
 
-	// let url = urlBase + '/AddContact.' + extension;
+	let url = urlBase + '/AddContact.' + extension;
 
-	// let xhr = new XMLHttpRequest();
-	// xhr.open("POST", url, true);
-	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	// try
-	// {
-  //   xhr.onreadystatechange = function()
-	// 	{
-  //     // document.getElementById("signupResult").innerHTML = this.status;
-	// 		if (this.readyState == 4 && this.status == 200)
-	// 		{
-  //       let jsonObject = JSON.parse( xhr.responseText );
-	// 			error = jsonObject.error;
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+    xhr.onreadystatechange = function()
+		{
+      // document.getElementById("signupResult").innerHTML = this.status;
+			if (this.readyState == 4 && this.status == 200)
+			{
+        let jsonObject = JSON.parse( xhr.responseText );
+				error = jsonObject.error;
 
-	// 			if ( error != "" )
-	// 			{
-  //         document.getElementById("addContactResult").innerHTML = "Contact already exists.";
-	// 				return;
-	// 			}
+        document.getElementById("addContactResult").innerHTML = "Contact successfully added.";
 
-	// 			saveCookie();
-	// 		}
-	// 	};
-	// 	xhr.send(jsonPayload);
-	// }
-	// catch(err)
-	// {
-	// 	document.getElementById("addContactResult").innerHTML = err.message;
-	// }
+				saveCookie();
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("addContactResult").innerHTML = err.message;
+	}
 }
 
 function saveCookie()
@@ -177,6 +171,7 @@ function saveCookie()
 	let date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));
 	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+  console.log(document.cookie);
 }
 
 function readCookie()
@@ -206,20 +201,20 @@ function readCookie()
 	{
 		window.location.href = "index.html";
 	}
-	else
-	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
-	}
+	// else
+	// {
+	// 	document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+	// }
 }
 
-// function doLogout()
-// {
-// 	userId = 0;
-// 	firstName = "";
-// 	lastName = "";
-// 	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-// 	window.location.href = "index.html";
-// }
+function doLogout()
+{
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "index.html";
+}
 
 // function addColor()
 // {
