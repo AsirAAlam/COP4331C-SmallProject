@@ -124,9 +124,9 @@ function doAddContact()
 	let inputPhone = document.getElementById("phoneInputAddContact").value;
 //	var hash = md5( password );
 
-readCookie();
-document.getElementById("addContactResult").innerHTML = "clicked add contact2";
-  // document.getElementById("successAlert").style.display = inline;
+  readCookie();
+  // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
+  // document.getElementById("successAlert").style.visibility = "visible";
 
 	let tmp = {
 		user_id:userId,
@@ -154,8 +154,6 @@ document.getElementById("addContactResult").innerHTML = "clicked add contact2";
 				error = jsonObject.error;
 
         document.getElementById("addContactResult").innerHTML = "Contact successfully added.";
-
-        // document.getElementById("successAlert").style.display = inline;
 
 				saveCookie();
 			}
