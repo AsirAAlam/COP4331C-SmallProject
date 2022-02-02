@@ -8,7 +8,7 @@ body {
   background-attachment: fixed;
   /* background-size: 100% 100%; */
   background-size: cover;
-  background-position: top;
+  background-position: right;
 }
 
 #contact_manager_body {
