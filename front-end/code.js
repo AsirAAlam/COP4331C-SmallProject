@@ -217,37 +217,6 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-// function addColor()
-// {
-// 	let newColor = document.getElementById("colorText").value;
-// 	document.getElementById("colorAddResult").innerHTML = "";
-
-// 	let tmp = {color:newColor,userId,userId};
-// 	let jsonPayload = JSON.stringify( tmp );
-
-// 	let url = urlBase + '/AddColor.' + extension;
-
-// 	let xhr = new XMLHttpRequest();
-// 	xhr.open("POST", url, true);
-// 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-// 	try
-// 	{
-// 		xhr.onreadystatechange = function()
-// 		{
-// 			if (this.readyState == 4 && this.status == 200)
-// 			{
-// 				document.getElementById("colorAddResult").innerHTML = "Color has been added";
-// 			}
-// 		};
-// 		xhr.send(jsonPayload);
-// 	}
-// 	catch(err)
-// 	{
-// 		document.getElementById("colorAddResult").innerHTML = err.message;
-// 	}
-
-// }
-
 function searchContacts()
 {
 	let srch = document.getElementById("searchKeywordInput").value;
@@ -286,7 +255,7 @@ function searchContacts()
         for (let i of arrayOfContacts)
         {
           var item = document.createElement("li");
-          item.innerHTML = i["user_id"] + " " + i["first_name"] + " " + i["last_name"];
+          item.innerHTML = i["first_name"] + " " + i["last_name"] + " " + i["phone"];
           list.appendChild(item);
         }
         document.getElementById("contactList").appendChild(list);
