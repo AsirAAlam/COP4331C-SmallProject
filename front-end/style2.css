@@ -48,7 +48,7 @@ body {
   box-sizing: border-box;
   padding: 50px 50px;
   background: url("https://blog.radware.com/wp-content/uploads/2018/11/AdobeStock_215123311-1.jpg");
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 button {
