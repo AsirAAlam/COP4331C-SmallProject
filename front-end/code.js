@@ -151,6 +151,50 @@ function doAddContact() {
   }
 }
 
+function doAddContactModal() {
+  let inputFirstname = document.getElementById("addInputFirst").value;
+  let inputLastname = document.getElementById("addInputLast").value;
+  let inputPhone = document.getElementById("addInputPhone").value;
+  //	var hash = md5( password );
+
+  readCookie();
+  // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
+  // document.getElementById("successAlert").style.visibility = "visible";
+
+  let tmp = {
+    user_id: userId,
+    first_name: inputFirstname,
+    last_name: inputLastname,
+    phone: inputPhone,
+  };
+  // //	var tmp = {login:login,password:hash};
+
+  let jsonPayload = JSON.stringify(tmp);
+
+  let url = urlBase + "/AddContact." + extension;
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  try {
+    xhr.onreadystatechange = function () {
+      // document.getElementById("signupResult").innerHTML = this.status;
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        error = jsonObject.error;
+
+        document.getElementById("addContactResult").innerHTML =
+          "Contact successfully added.";
+
+        saveCookie();
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    document.getElementById("addContactResult").innerHTML = err.message;
+  }
+}
+
 function saveCookie() {
   let minutes = 20;
   let date = new Date();
