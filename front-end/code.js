@@ -156,6 +156,9 @@ function doAddContactModal() {
   let inputLastname = document.getElementById("addInputLast").value;
   let inputPhone = document.getElementById("addInputPhone").value;
   //	var hash = md5( password );
+  document.getElementById("addInputFirst").value = "";
+  document.getElementById("addInputLast").value = "";
+  document.getElementById("addInputPhone").value = "";
 
   readCookie();
   // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
