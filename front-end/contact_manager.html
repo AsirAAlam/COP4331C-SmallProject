@@ -16,43 +16,53 @@
     .contactTable {
       padding: 0;
       margin: auto;
-      border-collapse: collapse;
+      /* border-collapse: collapse; */
       width: 80%;
       text-align: center;
+      font-size: 1.2em;
       color: whitesmoke;
       background-color: #52B788;
+      border-collapse: separate;
+      border: solid black 1px;
+      border-radius: 6px;
     }
 
     .headerRow {
       background-color: #2D6A4F;
       color: white;
       font-weight: bold;
+      font-size: 1.5em;
       height: 50px;
+      border-top: none;
     }
 
     .bodyRow:nth-child(odd) {
-      background-color: rgba(128, 128, 128, 0.219);
-    }
-
-    #latestUserScore {
-      background-color: crimson;
+      background-color: #40916C;
     }
 
     .bodyRow:hover {
-      background-color: darkorange;
+      color: black;
+      background-color: #D8F3DC;
     }
 
     .contactTable tr td {
-      height: 25px;
+      height: 35px;
     }
 
     .modifyContact {
       color: rgb(15, 15, 15);
     }
 
-    .primaryButton {
-      background-color: #52B69A;
+    /* .contactTable td,
+    th {
+      border-left: solid black 1px;
+      border-top: solid black 1px;
     }
+
+    .contactTable td:first-child,
+    th:first-child {
+      border-left: none;
+    } */
   </style>
 </head>
 
@@ -67,8 +77,7 @@
       <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
     </div>
 
-    <button type="button" class="btn btn-info" data-bs-toggle="modal" 
-    data-bs-target="#addModal">&plus;</button>
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
 
     <button id="Search_ContactManager" type="button" class="btn btn-info" onclick="searchContacts();">Search</button>
     <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
@@ -152,7 +161,8 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doAddContact();">Save Changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doAddContact();">Save
+            Changes</button>
         </div>
       </div>
     </div>
