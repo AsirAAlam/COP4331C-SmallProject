@@ -135,7 +135,6 @@ function doAddContact() {
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   try {
     xhr.onreadystatechange = function () {
-      // document.getElementById("signupResult").innerHTML = this.status;
       if (this.readyState == 4 && this.status == 200) {
         let jsonObject = JSON.parse(xhr.responseText);
         error = jsonObject.error;
@@ -242,7 +241,6 @@ function updateContactTable(arrayOfContacts) {
     let bodyRow = document.createElement("tr"); // Create the current table row
     bodyRow.className = "bodyRow";
 
-    // Lines 72-85 create the 5 column cells that will be appended to the current table row
     let firstName = document.createElement("td");
     firstName.innerText = contact["first_name"];
 
@@ -291,8 +289,6 @@ function searchContacts() {
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   try {
     xhr.onreadystatechange = function () {
-      // console.log("readystate: " + this.readyState);
-      // console.log("status: " + this.status);
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("searchResult").innerHTML =
           "Contact(s) has been retrieved";
@@ -300,16 +296,6 @@ function searchContacts() {
         let arrayOfContacts = JSON.parse(xhr.responseText);
 
         updateContactTable(arrayOfContacts);
-
-        // var list = document.createElement("ul");
-
-        // for (let i of arrayOfContacts) {
-        //   var item = document.createElement("li");
-        //   item.innerHTML =
-        //     i["first_name"] + " " + i["last_name"] + " " + i["phone"];
-        //   list.appendChild(item);
-        // }
-        // document.getElementById("contactList").appendChild(list);
       }
 
     };
