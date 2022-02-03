@@ -67,8 +67,26 @@
 </head>
 
 <body id="contact_manager_body" onload="searchContacts();">
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand">LAMPorghini</a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#About" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#Logout" class="nav-link" onclick="doLogout();">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <div class="text-center">
-    <h1>LAMPorghini Contact Manager</h1>
+    <h1>Contact Manager</h1>
     <h3>Search By Full Name:</h3>
   </div>
 
@@ -80,7 +98,7 @@
     <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
 
     <button id="Search_ContactManager" type="button" class="btn btn-info" onclick="searchContacts();">Search</button>
-    <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
+    <button id="Logout_ContactManager" type="button" class="btn btn-secondary" >Log out</button>
 
     <span id="searchResult">searchResult</span>
   </div>
