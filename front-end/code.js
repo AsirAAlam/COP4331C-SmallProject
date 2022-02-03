@@ -309,10 +309,18 @@ function searchContacts() {
   }
 
   // Bind enter key to search button
-  $("#searchKeywordInput").on("keyup", function (event) {
+  // $("#searchKeywordInput").on("keyup", function (event) {
+  //   if (event.keyCode === 13) {
+  //     //  console.log("Enter key pressed!!!!!");
+  //     $("#Search_ContactManager").click();
+  //   }
+  // });
+
+  document.getElementById("searchKeywordInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
     if (event.keyCode === 13) {
-      //  console.log("Enter key pressed!!!!!");
-      $("#Search_ContactManager").click();
+        document.getElementById("Search_ContactManager").click();
     }
-  });
+});
 }
