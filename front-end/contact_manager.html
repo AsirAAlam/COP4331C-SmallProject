@@ -67,11 +67,8 @@
       <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
     </div>
 
-    <button id="AddContact_ContactManager" type="button" class="btn btn-info"
-      onclick="window.location.href='add_contacts.html';">&plus;</button>
-
     <button type="button" class="btn btn-info" data-bs-toggle="modal" 
-    data-bs-target="#addModal">&plus;2</button>
+    data-bs-target="#addModal">&plus;</button>
 
     <button id="Search_ContactManager" type="button" class="btn btn-info" onclick="searchContacts();">Search</button>
     <button id="Logout_ContactManager" type="button" class="btn btn-secondary" onclick="doLogout();">Log out</button>
@@ -155,7 +152,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doAddContactModal();">Save Changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doAddContact();">Save Changes</button>
         </div>
       </div>
     </div>
