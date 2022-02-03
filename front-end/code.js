@@ -150,6 +150,9 @@ function doAddContact() {
   } catch (err) {
     document.getElementById("addContactResult").innerHTML = err.message;
   }
+
+  document.getElementById("searchKeywordInput").value = "";
+  searchContacts();
 }
 
 function saveCookie() {
