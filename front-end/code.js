@@ -63,7 +63,11 @@ function doRegister() {
   let inputPassword = document.getElementById("passwordInputRegister").value;
   //	var hash = md5( password );
 
-  // document.getElementById("signupResult").innerHTML = "clicked register";
+  if (inputUsername.length < 4)
+  {
+    document.getElementById("signupResult").innerHTML = "Username must be at least 4 characters.";
+    return;
+  }
 
   let tmp = {
     first_name: inputFirstname,
