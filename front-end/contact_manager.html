@@ -68,11 +68,17 @@
 
 <body id="contact_manager_body" onload="searchContacts();">
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container">
       <a href="#" class="navbar-brand">LAMPorghini</a>
 
-      <div class="collapse navbar-collapse">
+      <button class="navbar-toggler" type="button" 
+      data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a href="#About" class="nav-link">About</a>
