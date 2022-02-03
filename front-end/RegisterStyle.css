@@ -1,0 +1,32 @@
+body {
+  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+  background: url("https://www.ucf.edu/files/2020/03/ucf-zoom-pegasus3-1920x1080.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: bottom 0px right 0px; */
+  background-position: right;
+  font-family: sans-serif;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 350px;
+  height: 480px;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 20px 30px;
+  background: rgba(191, 191, 191, 0.8);
+  border: 3px solid #555;
+  /* opacity: 0.5; */
+}
+
+button {
+  width: 40%;
+  margin: 10px;
+}
