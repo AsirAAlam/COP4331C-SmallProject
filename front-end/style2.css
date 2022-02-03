@@ -1,9 +1,3 @@
-/* h1 {
-  color: white;
-}
-h2 {
-  color: white;
-} */
 body {
   /* text-align: center; */
   margin: 0;
@@ -19,15 +13,16 @@ body {
 
 .container {
   width: 350px;
-  height: 500px;
+  height: 480px;
   color: #000;
   top: 50%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 50px 50px;
-  background: url("https://blog.radware.com/wp-content/uploads/2018/11/AdobeStock_215123311-1.jpg");
+  padding: 20px 30px;
+  background: rgba(191, 191, 191, 0.8);
+  border: 3px solid #555;
   /* opacity: 0.5; */
 }
 
