@@ -310,8 +310,8 @@ function updateContactTable(arrayOfContacts) {
     editButton.innerText = "Edit";
     editButton.addEventListener("click", function(event) {
       event.preventDefault();
-      contactId = contact["contact_id"]
-      saveCookie
+      contactId = contact["contact_id"];
+      saveCookie();
       document.getElementById("Edit_Contact").click();
     });
     editCell.append(editButton);
