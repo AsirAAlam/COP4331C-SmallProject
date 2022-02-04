@@ -208,6 +208,10 @@ function doEditContact() {
   searchContacts();
 }
 
+function doDeleteContact() {
+  console.log("DELETE placeholder");
+}
+
 function saveCookie() {
   let minutes = 20;
   let date = new Date();
