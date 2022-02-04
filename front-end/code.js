@@ -4,6 +4,7 @@ const extension = "php";
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let contactId = 0;
 
 function doLogin() {
   userId = 0;
@@ -158,6 +159,55 @@ function doAddContact() {
   searchContacts();
 }
 
+function doEditContact() {
+  let inputFirstname = document.getElementById("editInputFirst").value;
+  let inputLastname = document.getElementById("editInputLast").value;
+  let inputPhone = document.getElementById("editInputPhone").value;
+  //	var hash = md5( password );
+  document.getElementById("editInputFirst").value = "";
+  document.getElementById("editInputLast").value = "";
+  document.getElementById("editInputPhone").value = "";
+
+  readCookie();
+  // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
+  // document.getElementById("successAlert").style.visibility = "visible";
+
+  let tmp = {
+    contact_id: contactId,
+    first_name: inputFirstname,
+    last_name: inputLastname,
+    phone: inputPhone,
+  };
+  // //	var tmp = {login:login,password:hash};
+
+  let jsonPayload = JSON.stringify(tmp);
+
+  let url = urlBase + "/EditContact." + extension;
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        error = jsonObject.error;
+
+        document.getElementById("editContactResult").innerHTML =
+          "Contact successfully updated.";
+
+        saveCookie();
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    document.getElementById("editContactResult").innerHTML = err.message;
+  }
+
+  document.getElementById("searchKeywordInput").value = "";
+  searchContacts();
+}
+
 function saveCookie() {
   let minutes = 20;
   let date = new Date();
@@ -255,10 +305,15 @@ function updateContactTable(arrayOfContacts) {
     phone.innerText = contact["phone"];
 
     let editCell = document.createElement("td");
-    let editButton = document.createElement("a");
+    let editButton = document.createElement("button");
     editButton.className = "modifyContact";
     editButton.innerText = "Edit";
-    editButton.href = "http://www.google.com";
+    editButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      contactId = contact["contact_id"]
+      saveCookie
+      document.getElementById("Edit_Contact").click();
+    });
     editCell.append(editButton);
 
     bodyRow.append(firstName, lastName, phone, editCell); // Append all 5 cells to the table row
@@ -322,5 +377,21 @@ function searchContacts() {
     if (event.keyCode === 13) {
         document.getElementById("Search_ContactManager").click();
     }
-});
+  });
+
+  document.getElementById("usernameInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("loginButton").click();
+    }
+  });
+
+  document.getElementById("passwordInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("loginButton").click();
+    }
+  });
 }
