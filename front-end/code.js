@@ -284,15 +284,15 @@ function createContactsTable(contactListDiv) {
 
   let tableBody = document.createElement("tbody"); // Creates the table body group element
   tableBody.className = "table-Body";
-  contactTable.append(tableBody); // Appends the table body group element to the table
-  contactListDiv.append(contactTable); // Appends the table to the scoreboard div
+  contactTable.append(tableBody); 
+  contactListDiv.append(contactTable); 
 }
 
 function updateContactTable(arrayOfContacts) {
   const appendContact = (contact) => {
-    const contactTable = document.querySelector(".contactTable"); // Find the table we created
+    const contactTable = document.querySelector(".contactTable");
 
-    let bodyRow = document.createElement("tr"); // Create the current table row
+    let bodyRow = document.createElement("tr");
     bodyRow.className = "bodyRow";
 
     let firstName = document.createElement("td");
@@ -316,14 +316,13 @@ function updateContactTable(arrayOfContacts) {
     });
     editCell.append(editButton);
 
-    bodyRow.append(firstName, lastName, phone, editCell); // Append all 5 cells to the table row
-    contactTable.append(bodyRow); // Append the current row to the scoreboard table body
+    bodyRow.append(firstName, lastName, phone, editCell);
+    contactTable.append(bodyRow); 
   };
 
   createContactsTable(document.getElementById("contactList"));
 
   for (const contact of arrayOfContacts) {
-    // let scoreIndex = scores.indexOf(score) + 1; // Index of score in score array for global ranking (these are already sorted in the back-end)
     appendContact(contact); // Creates and appends each row to the table body
   }
 }
