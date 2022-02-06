@@ -66,7 +66,13 @@ function doRegister() {
 
   if (inputUsername.length < 4)
   {
-    document.getElementById("signupResult").innerHTML = "Username must be at least 4 characters.";
+    document.getElementById("usernameError");
+	usernameError.textContent = "Username must be at least 4 characters.";
+	usernameError.style.color = "red";
+	usernameError.style.fontSize = "15px";
+	usernameError.style.fontWeight = "bold";
+	usernameInputRegister.style.borderColor = "red";
+	usernameInputRegister.style.borderWidth = "2px";
     return;
   }
 
@@ -94,8 +100,13 @@ function doRegister() {
         error = jsonObject.error;
 
         if (error != "") {
-          document.getElementById("signupResult").innerHTML =
-            "Username already exists.";
+          document.getElementById("usernameError");
+          usernameError.textContent = "Username already exists.";
+		  usernameError.style.color = "red";
+		  usernameError.style.fontSize = "15px";
+		  usernameError.style.fontWeight = "bold";
+		  usernameInputRegister.style.borderColor = "red";
+		  usernameInputRegister.style.borderWidth = "2px";
           return;
         }
 
