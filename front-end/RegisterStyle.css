@@ -9,19 +9,6 @@ body {
   background-attachment: fixed;
 }
 
-.team-name {
-  text-align: center; 
-  font-size: 36px;
-}
-
-h2 {
-  top: -20px;
-  font-size: 30px;
-  font-family: sans-serif;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
 .container {
   width: 350px;
   height: 510px;
@@ -36,36 +23,42 @@ h2 {
   border: 3px solid #555;
 }
 
-.inputs {
-  margin-bottom: 30px;
+.container h2 {
+  top: -20px;
+  text-align: center;
+  font-size: 28px;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.button1 {
+.container label {
+  margin-left: -8px;
+  font-weight: bold;
+  color: black;
+}
+
+.container input {
+  margin-bottom: -8px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.button {
   background-color: rgb(232, 203, 130);
   border: rgb(245, 210, 115);
   color: black;
-  padding: 12px 25px;
+  padding: 12px 34px;
+  margin-left: 10px;
+  margin-top: 10px;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   border-radius: 5px;
 }
 
-.button2 {
-  background-color: dimGray;
-  border: black;
-  color: black;
-  padding: 12px 25px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.button1:hover {
+.button:hover {
   background-color: rgb(250, 229, 175);
-}
-
-.button2:hover {
-  background-color: gray;
 }
