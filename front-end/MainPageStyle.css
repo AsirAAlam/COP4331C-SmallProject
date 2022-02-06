@@ -23,8 +23,8 @@ input:focus::placeholder {
 }
 
 .loginbox {
-  width: 350px;
-  height: 510px;
+  width: 370px;
+  height: 530px;
   color: #fff;
   top: 50%;
   left: 50%;
