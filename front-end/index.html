@@ -12,10 +12,11 @@
   </head>
 
   <body>
-    <h1 style="text-align: center"><br />Team LAMPorghini</h1>
+    <h1 class="team-name"><br>Team LAMPorghini</h1>
 
     <div class="loginbox">
-      <h1 style="font-size: 50px; margin-top: -50px; font-family: sans-serif">LOGIN</h1>
+      <h1 style="margin-top: -50px">Contact Manager</h1>
+      <h2>Please Log-In</h2>
 
       <p style="margin-left: -8px; margin-bottom: 3px; color: black">
         Username:
@@ -42,25 +43,20 @@
           placeholder="Password"
         />
       </div>
-      <input type="checkbox" value="lsRememberMe" id="rememberMe"> 
-    <label for="rememberMe">Remember me</label>
     <br>
 
-
-      <button id="loginButton" class="big-button" onclick="doLogin();">
+      <button id="loginButton" class="button" onclick="doLogin();">
         Login
       </button>
       <button
         id="gotoRegisterButton"
-        class="big-button"
+        class="button"
         onclick="window.location.href='register.html'"
       >
         Register
       </button>
       <span id="loginResult">loginResult</span>
 
-      <!-- <a href="#">Forgot your password?</a><br/> -->
-      <!-- <a href="#">Don't have an account?</a> -->
     </div>
 
     <script type="text/javascript" src="code.js"></script>
