@@ -1,14 +1,25 @@
 body {
-  /* text-align: center; */
   margin: 0;
   padding: 0;
   background: url("https://www.ucf.edu/files/2020/03/ucf-zoom-pegasus3-1920x1080.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: bottom 0px right 0px; */
   background-position: right;
   font-family: sans-serif;
   background-attachment: fixed;
+}
+
+.team-name {
+  text-align: center; 
+  font-size: 36px;
+}
+
+h2 {
+  top: -20px;
+  font-size: 30px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .container {
@@ -23,10 +34,38 @@ body {
   padding: 20px 30px;
   background: rgba(191, 191, 191, 0.8);
   border: 3px solid #555;
-  /* opacity: 0.5; */
 }
 
-button {
-  width: 40%;
-  margin: 10px;
+.inputs {
+  margin-bottom: 30px;
+}
+
+.button1 {
+  background-color: rgb(232, 203, 130);
+  border: rgb(245, 210, 115);
+  color: black;
+  padding: 12px 25px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.button2 {
+  background-color: dimGray;
+  border: black;
+  color: black;
+  padding: 12px 25px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.button1:hover {
+  background-color: rgb(250, 229, 175);
+}
+
+.button2:hover {
+  background-color: gray;
 }
