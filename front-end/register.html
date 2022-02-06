@@ -7,17 +7,18 @@
 
   <body>
     <div class="registerbox">
-      <h1 style="text-align: center;">LAMPorghini</h1>
+      <h1 class = "team-name"><br>Team LAMPorghini</h1>
    </div>
     
     <div class="container">
-    <h2 style="top:-20px;">Create an Account!</h2>
+    <h2>Create an Account!</h2>
       <div class="mb-3 row">
       
       <input type="text" class="form-control" id="firstNameInputRegister" placeholder="Enter firstname">
 
       </div>
 
+      <div class="inputs">
       <div class="mb-3 row">
         <input type="text" class="form-control" id="lastNameInputRegister" placeholder="Enter lastname">
       </div>
@@ -33,9 +34,9 @@
       <div class="mb-3 row">
         <input type="password" class="form-control" id="passwordInputRegister" placeholder="Enter password">
       </div>
-      
-      <button id="registerButton" type="button" class="btn btn-primary" onclick="doRegister();">Register</button>
-      <button id="gotoLoginButton" type="button" class="btn btn-secondary" onclick="window.location.href='index.html'">Log in!</button>
+      </div>
+      <button id="registerButton" type="button" class="button1" onclick="doRegister();">Register</button>
+      <button id="gotoLoginButton" type="button" class="button2" onclick="window.location.href='index.html'">Log in!</button>
   
       <span id="signupResult">signupResult</span>
   
