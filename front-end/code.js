@@ -223,7 +223,46 @@ function doEditContact() {
 }
 
 function doDeleteContact() {
-  console.log("DELETE placeholder");
+  //	var hash = md5( password );
+  document.getElementById("editInputFirst").value = "";
+  document.getElementById("editInputLast").value = "";
+  document.getElementById("editInputPhone").value = "";
+
+  readCookie();
+  // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
+  // document.getElementById("successAlert").style.visibility = "visible";
+
+  let tmp = {
+    contact_id: contactId,
+  };
+  // //	var tmp = {login:login,password:hash};
+
+  let jsonPayload = JSON.stringify(tmp);
+
+  let url = urlBase + "/DeleteContact." + extension;
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  try {
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let jsonObject = JSON.parse(xhr.responseText);
+        error = jsonObject.error;
+
+        document.getElementById("deleteContactResult").innerHTML =
+          "Contact successfully deleted.";
+
+        saveCookie();
+      }
+    };
+    xhr.send(jsonPayload);
+  } catch (err) {
+    document.getElementById("deleteContactResult").innerHTML = err.message;
+  }
+
+  document.getElementById("searchKeywordInput").value = "";
+  searchContacts();
 }
 
 function saveCookie() {
@@ -302,8 +341,8 @@ function createContactsTable(contactListDiv) {
 
   let tableBody = document.createElement("tbody"); // Creates the table body group element
   tableBody.className = "table-Body";
-  contactTable.append(tableBody); 
-  contactListDiv.append(contactTable); 
+  contactTable.append(tableBody);
+  contactListDiv.append(contactTable);
 }
 
 function updateContactTable(arrayOfContacts) {
@@ -335,7 +374,7 @@ function updateContactTable(arrayOfContacts) {
     editCell.append(editButton);
 
     bodyRow.append(firstName, lastName, phone, editCell);
-    contactTable.append(bodyRow); 
+    contactTable.append(bodyRow);
   };
 
   createContactsTable(document.getElementById("contactList"));
