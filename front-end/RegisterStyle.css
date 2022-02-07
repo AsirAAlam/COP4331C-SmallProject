@@ -46,19 +46,42 @@ input:focus::placeholder {
   color: transparent;
 }
 
-.button {
+.button1 {
   background-color: rgb(232, 203, 130);
   border: rgb(245, 210, 115);
   color: black;
   padding: 12px 34px;
-  margin-left: 10px;
-  margin-top: 10px;
+  display: inline-block;
+  position: relative;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   border-radius: 5px;
+  width: 45%;
+  margin-top: 10px;
+  margin: auto;
 }
 
-.button:hover {
+.button2 {
+  background-color: rgb(232, 203, 130);
+  border: rgb(245, 210, 115);
+  color: black;
+  padding: 12px 34px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 45%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.button1:hover {
+  background-color: rgb(250, 229, 175);
+}
+
+.button2:hover {
   background-color: rgb(250, 229, 175);
 }
