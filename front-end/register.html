@@ -5,13 +5,9 @@
     <title>Team LAMPorghini!</title>
   </head>
 
-  <body>
-    <div class="registerbox">
-      
-   </div>
-    
+  <body>    
     <div class="container">
-    <h2>Create an Account!</h2>
+      <h2>Create an Account!</h2>
 
       <div class="mb-3 row">
       	<label>First Name:</label>
@@ -19,33 +15,32 @@
       </div>
 
       <div class="inputs">
-      <div class="mb-3 row">
-	<label>Last Name:</label>
-        <input type="text" class="form-control" id="lastNameInputRegister" placeholder="Smith">
+        <div class="mb-3 row">
+          <label>Last Name:</label>
+          <input type="text" class="form-control" id="lastNameInputRegister" placeholder="Smith">
+        </div>
+
+        <div class="mb-3 row">
+          <label>Phone Number:</label>
+          <input type="text" class="form-control" id="phoneInputRegister" placeholder="(123)-456-7890">
+        </div>
+
+        <div class="mb-3 row">
+          <label>Username:</label>
+          <input type="text" class="form-control" id="usernameInputRegister" placeholder="Username">
+        </div>
+        <span id="usernameError"></span>
+
+        <div class="mb-3 row">
+          <label>Password:</label>
+          <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password">
+        </div>
       </div>
 
-      <div class="mb-3 row">
-	<label>Phone Number:</label>
-        <input type="text" class="form-control" id="phoneInputRegister" placeholder="(123)-456-7890">
-      </div>
-
-      <div class="mb-3 row">
-	<label>Username:</label>
-        <input type="text" class="form-control" id="usernameInputRegister" placeholder="Username">
-      </div>
-	<span id="usernameError"></span>
-
-      <div class="mb-3 row">
-	<label>Password:</label>
-        <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password">
-      </div>
-      </div>
       <button id="registerButton" type="button" class="button1" onclick="doRegister();">Register</button>
       <button id="gotoLoginButton" type="button" class="button2" onclick="window.location.href='index.html'">Log in!</button>
   
       <span id="signupResult">signupResult</span>
-  
-
     </div>
 
     <script type="text/javascript" src="code.js"></script>
