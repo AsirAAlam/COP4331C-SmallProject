@@ -24,7 +24,8 @@ create table contacts
   `first_name` varchar(50) not null default '',
   `last_name` varchar(50) not null default '',
   `phone` varchar(50) not null,
-  `email` varchar(50) not null default '',  
+  `email` varchar(50) not null default '', 
+  `date_created` datetime not null default current_timestamp,
    primary key (contact_id),
    foreign key (user_id) references users(user_id)
 ) engine = InnoDB;
