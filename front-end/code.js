@@ -128,10 +128,12 @@ function doAddContact() {
   let inputFirstname = document.getElementById("addInputFirst").value;
   let inputLastname = document.getElementById("addInputLast").value;
   let inputPhone = document.getElementById("addInputPhone").value;
+  let inputEmail = document.getElementById("addInputEmail").value;
   //	var hash = md5( password );
   document.getElementById("addInputFirst").value = "";
   document.getElementById("addInputLast").value = "";
   document.getElementById("addInputPhone").value = "";
+  document.getElementById("addInputEmail").value = "";
 
   readCookie();
   // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
@@ -142,6 +144,7 @@ function doAddContact() {
     first_name: inputFirstname,
     last_name: inputLastname,
     phone: inputPhone,
+    email: inputEmail,
   };
   // //	var tmp = {login:login,password:hash};
 
@@ -177,10 +180,12 @@ function doEditContact() {
   let inputFirstname = document.getElementById("editInputFirst").value;
   let inputLastname = document.getElementById("editInputLast").value;
   let inputPhone = document.getElementById("editInputPhone").value;
+  let inputEmail = document.getElementById("editInputEmail").value;
   //	var hash = md5( password );
   document.getElementById("editInputFirst").value = "";
   document.getElementById("editInputLast").value = "";
   document.getElementById("editInputPhone").value = "";
+  document.getElementById("editInputEmail").value = "";
 
   readCookie();
   // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
@@ -191,6 +196,7 @@ function doEditContact() {
     first_name: inputFirstname,
     last_name: inputLastname,
     phone: inputPhone,
+    email: inputEmail,
   };
   // //	var tmp = {login:login,password:hash};
 
@@ -227,6 +233,7 @@ function doDeleteContact() {
   document.getElementById("editInputFirst").value = "";
   document.getElementById("editInputLast").value = "";
   document.getElementById("editInputPhone").value = "";
+  document.getElementById("editInputEmail").value = "";
 
   readCookie();
   // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
@@ -315,7 +322,7 @@ function doLogout() {
   window.location.href = "index.html";
 }
 
-let tableHeaders = ["First Name", "Last Name", "Phone", ""];
+let tableHeaders = ["First Name", "Last Name", "Phone", "Email", ""];
 
 function createContactsTable(contactListDiv) {
   while (contactListDiv.firstChild) contactListDiv.removeChild(contactListDiv.firstChild); // Remove all children from scoreboard div (if any)
@@ -361,6 +368,9 @@ function updateContactTable(arrayOfContacts) {
     let phone = document.createElement("td");
     phone.innerText = contact["phone"];
 
+    let email = document.createElement("td");
+    email.innerText = contact["email"];
+
     let editCell = document.createElement("td");
     let editButton = document.createElement("button");
     editButton.className = "modifyContact";
@@ -373,7 +383,7 @@ function updateContactTable(arrayOfContacts) {
     });
     editCell.append(editButton);
 
-    bodyRow.append(firstName, lastName, phone, editCell);
+    bodyRow.append(firstName, lastName, phone, email, editCell);
     contactTable.append(bodyRow);
   };
 
