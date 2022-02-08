@@ -1,0 +1,271 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: LAMPorghini Contact Manager (Group 8)
+  description: >-
+    Group 8's API Documentation for the COP4331 Small Project, a Contact Manager.
+  license:
+    name: Apache 2.0
+    url: >- 
+      http://www.apache.org/licenses/LICENSE-2.0.html
+paths: 
+  /Login.php:
+    post:
+      tags:
+      - Users
+      summary: Logs in to Contact Manager
+      operationId: doLogin
+      description: Logs in to Contact Manager
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: loginItem
+        description: Login
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /AddUser.php:
+    post:
+      tags:
+      - Users
+      summary: Adds a new User
+      operationId: addUser
+      description: Adds a new User
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: registerItem
+        description: Register
+        schema:
+          $ref: '#/definitions/AddUser'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /AddContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Adds a new contact
+      operationId: addContact
+      description: Adds a new contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: addContactItem
+        description: AddContact
+        schema:
+          $ref: '#/definitions/AddContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /DeleteContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Deletes an existing contact
+      operationId: deleteContact
+      description: Deletes an existing contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: deleteContactItem
+        description: DeleteContact
+        schema:
+          $ref: '#/definitions/DeleteContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /EditContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Edits an existing contact
+      operationId: editContact
+      description: Edits an existing contact
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: editContactItem
+        description: EditContact
+        schema:
+          $ref: '#/definitions/EditContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  /SearchContact.php:
+    post:
+      tags:
+      - Contacts
+      summary: Contacts search query
+      operationId: searchContact
+      description: Searches for a list of contacts by full name.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: searchContactItem
+        description: SearchContact
+        schema:
+          $ref: '#/definitions/SearchContact'
+      responses:
+        200:
+          description: OK
+        404:
+          description: URL Not Found
+        500:
+          description: Server Error
+  
+definitions:
+  Login:
+    type: object
+    required:
+    - username
+    - password
+    properties:
+      username:
+        type: string
+        example: "jandrews123"
+      password:
+        type: string
+        example: "password123"
+  
+  AddUser:
+    type: object
+    required:
+    - first_name
+    - last_name
+    - phone
+    - username
+    - password
+    properties:
+      first_name:
+        type: string
+        example: "Jeffrey"
+      last_name:
+        type: string
+        example: "Andrews"
+      phone:
+        type: string
+        example: "123-456-7890"
+      username:
+        type: string
+        example: "jandrews123"
+      password:
+        type: string
+        example: "password123"
+
+  AddContact:
+    type: object
+    required:
+    - user_id
+    - first_name
+    - last_name
+    - phone
+    - email
+    properties:
+      user_id:
+        type: integer
+        example: 4
+      first_name:
+        type: string
+        example: "John"
+      last_name:
+        type: string
+        example: "Cena"
+      phone:
+        type: string
+        example: "123-456-7890"
+      email:
+        type: string
+        example: "john@cena.com"
+
+  DeleteContact:
+    type: object
+    required:
+    - contact_id
+    properties:
+      contact_id:
+        type: integer
+        example: 17
+
+  EditContact:
+    type: object
+    required:
+    - contact_id
+    - first_name
+    - last_name
+    - phone
+    - email
+    properties:
+      contact_id:
+        type: integer
+        example: 4
+      first_name:
+        type: string
+        example: "John"
+      last_name:
+        type: string
+        example: "Cena"
+      phone:
+        type: string
+        example: "123-456-7890"
+      email:
+        type: string
+        example: "john@cena.com"
+
+  SearchContact:
+    type: object
+    required:
+    - user_id
+    - name
+    properties:
+      user_id:
+        type: integer
+        example: 4
+      name:
+        type: string
+        example: "John"
+
+host: cop4331group8.xyz
+basePath: /php
+schemes:
+- http
