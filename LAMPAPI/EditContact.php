@@ -6,6 +6,7 @@
 	$first_name = $inData['first_name'];
 	$last_name = $inData['last_name'];
 	$phone = $inData['phone'];
+	$email = $inData['email'];
 
 	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
 	if( $conn->connect_error )
@@ -22,7 +23,7 @@
 		{
 			$conn->query("
         UPDATE contacts 
-        SET first_name = '$first_name', last_name = '$last_name', phone = '$phone'
+        SET first_name = '$first_name', last_name = '$last_name', phone = '$phone', email = '$email'
         WHERE contact_id = $contact_id 
       ");
 			returnWithError("");

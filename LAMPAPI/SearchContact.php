@@ -17,7 +17,7 @@
       AND (first_name LIKE '%$name%'
       OR last_name LIKE '%$name%'
       OR CONCAT(first_name, ' ', last_name) LIKE '%$name%')
-      ORDER BY first_name, last_name, phone, user_id, contact_id;
+      ORDER BY first_name, last_name, phone, email, user_id, contact_id;
     ");
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -44,17 +44,5 @@
 	{
 		header('Content-type: application/json');
 		echo $obj;
-	}
-
-	function returnWithError( $err )
-	{
-		$retValue = '{"user_id":0,"first_name":"","last_name":"","error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
-
-	function returnWithInfo( $first_name, $last_name, $phone, $user_id )
-	{
-		$retValue = '{"user_id":' . $user_id . ',"first_name":"' . $first_name . '","last_name":"' . $last_name . '","phone":"' . $phone . '","error":""}';
-		sendResultInfoAsJson( $retValue );
 	}
 ?>
