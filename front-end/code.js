@@ -82,7 +82,7 @@ function doRegister() {
   let tmp = {
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone,
+    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
     username: inputUsername,
     password: inputPassword,
   };
@@ -143,8 +143,8 @@ function doAddContact() {
     user_id: userId,
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone,
-    email: inputEmail,
+    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
   };
   // //	var tmp = {login:login,password:hash};
 
@@ -195,8 +195,8 @@ function doEditContact() {
     contact_id: contactId,
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone,
-    email: inputEmail,
+    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
   };
   // //	var tmp = {login:login,password:hash};
 
@@ -380,6 +380,10 @@ function updateContactTable(arrayOfContacts) {
       contactId = contact["contact_id"];
       saveCookie();
       document.getElementById("Edit_Contact").click();
+      document.getElementById("editInputFirst").value = contact["first_name"];
+      document.getElementById("editInputLast").value = contact["last_name"];
+      document.getElementById("editInputPhone").value = contact["phone"];
+      document.getElementById("editInputEmail").value = contact["email"];
     });
     editCell.append(editButton);
 
