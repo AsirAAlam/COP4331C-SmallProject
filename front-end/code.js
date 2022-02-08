@@ -453,7 +453,7 @@ function searchContacts() {
     .addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementById("loginButton").click();
+      document.getElementById("loginButton").click();
     }
   });
 
@@ -461,7 +461,7 @@ function searchContacts() {
     .addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-        document.getElementById("loginButton").click();
+      document.getElementById("loginButton").click();
     }
   });
 }
