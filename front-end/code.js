@@ -444,30 +444,37 @@ function searchContacts() {
   //     $("#Search_ContactManager").click();
   //   }
   // });
+  document.getElementById("searchKeywordInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("Search_ContactManager").click();
+    }
+  });
   
+  document.getElementById("usernameInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("loginButton").click();
+    }
+  });
+  
+  document.getElementById("passwordInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("loginButton").click();
+    }
+  });
+}
 
 
-document.getElementById("searchKeywordInput")
-  .addEventListener("keyup", function(event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-      document.getElementById("Search_ContactManager").click();
+function togglePasswordVisibility() {
+  var x = document.getElementById("passwordInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
   }
-});
-
-document.getElementById("usernameInput")
-  .addEventListener("keyup", function(event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    document.getElementById("loginButton").click();
-  }
-});
-
-document.getElementById("passwordInput")
-  .addEventListener("keyup", function(event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    document.getElementById("loginButton").click();
-  }
-});
 }
