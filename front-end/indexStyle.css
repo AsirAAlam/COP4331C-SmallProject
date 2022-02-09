@@ -10,14 +10,6 @@ body {
   background-position: right;
 }
 
-#contact_manager_body {
-  background-color: #3d6ea5;
-}
-
-.space {
-  padding-left: 10px;
-}
-
 input:focus::placeholder {
   color: transparent;
 }
@@ -116,36 +108,6 @@ input[type="password"] {
   cursor: pointer;
   background: rgb(15, 15, 15);
   color: #fff;
-}
-
-.action_btn:hover {
-  background-color: #ffc187;
-}
-
-a {
-  margin-right: 4px;
-}
-
-/* .loginbox input[type="submit"]:hover {
-  cursor: pointer;
-  background: #ffc187;
-  color: #000;
-}
-
-.loginbox input[type="checkbox"]
-{
-color:black;
-} */
-
-.loginbox a {
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
-  color: darkgrey;
-}
-
-.loginbox a:hover {
-  color: rgb(15, 15, 15);
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
