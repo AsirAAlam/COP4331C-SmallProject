@@ -25,16 +25,17 @@
     <title>Team LAMPorghini!</title>
   </head>
 
-  <body>    
+  <body onload="loadRegister();">    
     <div class="container registerBox">
       <h2 class="philosopher">Create an Account!</h2>
 
-      <div class="mb-3 row">
-      	<label>First Name:</label>
-      	<input type="text" class="form-control" id="firstNameInputRegister" placeholder="John">
-      </div>
-
+      
       <div class="inputs">
+        <div class="mb-3 row">
+          <label><span style="color:#FF0000">* </span>First Name:</label>
+          <input type="text" class="form-control" id="firstNameInputRegister" placeholder="John">
+        </div>
+
         <div class="mb-3 row">
           <label><span style="color:#FF0000">* </span>Last Name:</label>
           <input type="text" class="form-control" id="lastNameInputRegister" placeholder="Smith">

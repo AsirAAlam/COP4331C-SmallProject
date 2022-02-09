@@ -446,6 +446,27 @@ function loadIndex() {
   });
 }
 
+function loadRegister() {
+  // Enter to register
+  let registerInput = [
+    "firstNameInputRegister", 
+    "lastNameInputRegister", 
+    "phoneInputRegister",
+    "usernameInputRegister",
+    "passwordInputRegister"
+  ]
+
+  for (const id of registerInput) {
+    document.getElementById(id)
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById("registerButton").click();
+      }
+    });
+  }
+}
+
 function loadContactManager() {
   searchContacts();
 
