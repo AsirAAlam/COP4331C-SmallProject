@@ -66,7 +66,6 @@ function doRegister() {
 
   if (inputUsername.length < 4)
   {
-    document.getElementById("usernameError");
     usernameError.textContent = "Username must be at least 4 characters.";
     usernameError.className = "error";
     usernameInputRegister.style.borderColor = "red";
@@ -99,7 +98,6 @@ function doRegister() {
         error = jsonObject.error;
 
         if (error != "") {
-          document.getElementById("usernameError");
           usernameError.textContent = "Username already exists.";
           usernameError.className = "error";
           usernameInputRegister.style.borderColor = "red";
