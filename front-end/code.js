@@ -418,9 +418,6 @@ function searchContacts() {
   try {
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("searchResult").innerHTML =
-          "Contact(s) has been retrieved";
-
         let arrayOfContacts = JSON.parse(xhr.responseText);
 
         updateContactTable(arrayOfContacts);
