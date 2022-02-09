@@ -38,9 +38,7 @@ function doLogin() {
         if (userId < 1) {
           document.getElementById("loginResult");
           loginResult.textContent = "User/Password combination incorrect.";
-          loginResult.style.color = "red";
-          loginResult.style.fontSize = "15px";
-          loginResult.style.fontWeight = "bold";
+          loginResult.className = "error";
           return;
         }
 
@@ -69,19 +67,18 @@ function doRegister() {
   if (inputUsername.length < 4)
   {
     document.getElementById("usernameError");
-	usernameError.textContent = "Username must be at least 4 characters.";
-	usernameError.style.color = "red";
-	usernameError.style.fontSize = "15px";
-	usernameError.style.fontWeight = "bold";
-	usernameInputRegister.style.borderColor = "red";
-	usernameInputRegister.style.borderWidth = "2px";
+    usernameError.textContent = "Username must be at least 4 characters.";
+    usernameError.className = "error";
+    usernameInputRegister.style.borderColor = "red";
+    usernameInputRegister.style.borderWidth = "2px";
     return;
   }
 
   let tmp = {
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    // phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    phone: inputPhone,
     username: inputUsername,
     password: inputPassword,
   };
@@ -104,11 +101,9 @@ function doRegister() {
         if (error != "") {
           document.getElementById("usernameError");
           usernameError.textContent = "Username already exists.";
-		  usernameError.style.color = "red";
-		  usernameError.style.fontSize = "15px";
-		  usernameError.style.fontWeight = "bold";
-		  usernameInputRegister.style.borderColor = "red";
-		  usernameInputRegister.style.borderWidth = "2px";
+          usernameError.className = "error";
+          usernameInputRegister.style.borderColor = "red";
+          usernameInputRegister.style.borderWidth = "2px";
           return;
         }
 
@@ -142,8 +137,10 @@ function doAddContact() {
     user_id: userId,
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
-    email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
+    // phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    // email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
+    phone: inputPhone,
+    email: inputEmail
   };
   // //	var tmp = {login:login,password:hash};
 
@@ -194,8 +191,10 @@ function doEditContact() {
     contact_id: contactId,
     first_name: inputFirstname,
     last_name: inputLastname,
-    phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
-    email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
+    phone: inputPhone,
+    email: inputEmail
+    // phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
+    // email: inputEmail.replace(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
   };
   // //	var tmp = {login:login,password:hash};
 
