@@ -451,7 +451,9 @@ function searchContacts() {
         document.getElementById("Search_ContactManager").click();
     }
   });
-  
+}
+
+function loadIndex() {
   document.getElementById("usernameInput")
     .addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -467,6 +469,10 @@ function searchContacts() {
       document.getElementById("loginButton").click();
     }
   });
+}
+
+function loadContactManager() {
+  searchContacts();
 }
 
 
