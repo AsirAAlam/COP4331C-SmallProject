@@ -61,26 +61,26 @@
 
         <div class="modal-body">
           <div class="mb-3 row">
-            <input type="text" class="form-control" id="addInputFirst" placeholder="Enter First Name">
+            <input type="text" class="form-control" id="addInputFirst" placeholder="First Name">
           </div>
 
           <div class="mb-3 row">
-            <input type="text" class="form-control" id="addInputLast" placeholder="Enter Last Name">
+            <input type="text" class="form-control" id="addInputLast" placeholder="Last Name">
           </div>
 
           <div class="mb-3 row">
-            <input type="text" class="form-control" id="addInputPhone" placeholder="Enter Phone Number">
+            <input type="text" class="form-control" id="addInputPhone" placeholder="Phone Number">
           </div>
           
           <div class="mb-3 row">
-            <input type="text" class="form-control" id="addInputEmail" placeholder="Enter Email">
+            <input type="text" class="form-control" id="addInputEmail" placeholder="Email">
           </div>
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doAddContact();">Save
-            Changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveAddContactBtn" onclick="doAddContact();">
+            Save Changes</button>
         </div>
       </div>
     </div>
@@ -111,7 +111,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="doEditContact();">Save Changes</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveEditContactBtn" onclick="doEditContact();">Save Changes</button>
         </div>
       </div>
     </div>

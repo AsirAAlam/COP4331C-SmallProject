@@ -435,21 +435,6 @@ function searchContacts() {
   } catch (err) {
     document.getElementById("searchResult").innerHTML = err.message;
   }
-
-  // Bind enter key to search button
-  // $("#searchKeywordInput").on("keyup", function (event) {
-  //   if (event.keyCode === 13) {
-  //     //  console.log("Enter key pressed!!!!!");
-  //     $("#Search_ContactManager").click();
-  //   }
-  // });
-  document.getElementById("searchKeywordInput")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("Search_ContactManager").click();
-    }
-  });
 }
 
 function loadIndex() {
@@ -472,8 +457,51 @@ function loadIndex() {
 
 function loadContactManager() {
   searchContacts();
-}
 
+  // Enter to search
+  document.getElementById("searchKeywordInput")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("Search_ContactManager").click();
+    }
+  });
+
+  // Enter to add contact
+  let addInput = [
+    "addInputFirst", 
+    "addInputLast", 
+    "addInputPhone",
+    "addInputEmail"
+  ]
+  for (const id of addInput) {
+    document.getElementById(id)
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById("saveAddContactBtn").click();
+      }
+    });
+  }
+  
+  // Enter edit add contact
+  let editInput = [
+    "editInputFirst", 
+    "editInputLast", 
+    "editInputPhone",
+    "editInputEmail"
+  ]
+
+  for (const id of editInput) {
+    document.getElementById(id)
+    .addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById("saveEditContactBtn").click();
+      }
+    });
+  }
+}
 
 function togglePasswordVisibility() {
   var x = document.getElementById("passwordInput");
