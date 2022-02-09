@@ -28,10 +28,6 @@ input:focus::placeholder {
   border: 3px solid #555;
 }
 
-.loginbox .left{
-padding: 0px 0px;
-}
-
 .loginbox h1 {
   font-size: 30px;
   font-family: sans-serif;
@@ -50,10 +46,6 @@ padding: 0px 0px;
   margin-bottom: -15px;
   padding: 0 0 20px;
   text-align: center;
-  color: black;
-}
-
-::placeholder {
   color: black;
 }
 
