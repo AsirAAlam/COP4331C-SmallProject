@@ -38,17 +38,19 @@
   </div>
 
   <div class="container">
-    <div class="mb-3 row">
-      <input type="text" class="form-control" id="searchKeywordInput" placeholder="Enter name">
+
+    <div class="input-group mb-3">
+      <input id="searchKeywordInput" type="text" class="form-control" placeholder="Search by name" aria-label="Search by name" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button id="Search_ContactManager" type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="searchContacts();">Search</button>
+        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
+      </div>
     </div>
 
-    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
-
+    <!-- Hidden button used to display edit modal -->
     <button id="Edit_Contact" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editModal" style="display:none;">Edit</button>
 
-    <button id="Search_ContactManager" type="button" class="btn btn-info" onclick="searchContacts();">Search</button>
-
-    <span id="searchResult">searchResult</span>
+    <span id="searchResult"></span>
   </div>
 
   <!-- Add Contact Modal -->
