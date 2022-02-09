@@ -26,6 +26,7 @@ input:focus::placeholder {
   padding: 70px 30px;
   background: rgba(191, 191, 191, 0.8);
   border: 3px solid #555;
+  backdrop-filter: blur(2px);
 }
 
 .loginbox h1 {
