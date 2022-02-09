@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("https://www.ucf.edu/files/2020/03/ucf-zoom-pegasus3-1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  font-family: sans-serif;
+  background-attachment: fixed;
+  background-size: cover;
+  
+ 
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.loginbox {
+  width: 370px;
+  height: 530px;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  background: rgba(191, 191, 191, 0.8);
+  border: 3px solid #555;
+  backdrop-filter: blur(2px);
+}
+
+.loginbox h1 {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: -5px;
+  margin-top: -25px;
+  padding: 0 0 20px;
+  text-align: center;
+  color: black;
+}
+
+.loginbox h2 {
+  font-size: 25px;
+  margin-bottom: -15px;
+  padding: 0 0 20px;
+  text-align: center;
+  color: black;
+}
+
+.loginbox p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.loginbox input{
+  color:black;
+}
+
+.loginbox input[type="text"],
+input[type="password"] {
+  border: 0px solid #555;
+  background: white;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.buttons {
+  margin-top: 35px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* https://coolors.co/palette/ff7b00-ff8800-ff9500-ffa200-ffaa00-ffb700-ffc300-ffd000-ffdd00-ffea00 */
+.button1 {
+  background-color: #ffd000;
+  border: #ffd000;
+  color: black;
+  padding: 12px 34px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width:45%;
+  margin:auto;
+}
+
+.button2 {
+  background-color: #ff9500;
+  border: #ff9500;
+  color: black;
+  padding: 12px 34px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width:45%;
+  margin-left: 20px;
+}
+
+.button1:hover {
+  background-color: rgb(250, 229, 175);
+}
+
+.button2:hover {
+  background-color: rgb(250, 229, 175);
+}
