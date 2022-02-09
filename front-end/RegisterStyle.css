@@ -47,8 +47,8 @@ input:focus::placeholder {
 }
 
 .button1 {
-  background-color: rgb(232, 203, 130);
-  border: rgb(245, 210, 115);
+  background-color: #ff9500;
+  border: #ff9500;
   color: black;
   padding: 12px 34px;
   display: inline-block;
@@ -63,8 +63,8 @@ input:focus::placeholder {
 }
 
 .button2 {
-  background-color: rgb(232, 203, 130);
-  border: rgb(245, 210, 115);
+  background-color: #ffd000;
+  border: #ffd000;
   color: black;
   padding: 12px 34px;
   display: inline-block;
