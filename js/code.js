@@ -530,8 +530,8 @@ function loadContactManager() {
   }
 }
 
-function togglePasswordVisibility() {
-  var x = document.getElementById("passwordInput");
+function toggleTextVisibility(textId) {
+  var x = document.getElementById(textId);
   if (x.type === "password") {
     x.type = "text";
   } else {

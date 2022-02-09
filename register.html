@@ -58,6 +58,13 @@
           <input type="password" class="form-control" id="passwordInputRegister" placeholder="Password">
         </div>
         <span id="passwordError"></span>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="registerShowpassCheck" onclick="toggleTextVisibility('passwordInputRegister');">
+          <label class="form-check-label dropShadow" for="registerShowpassCheck" style="color: white;">
+            Show password
+          </label>
+        </div>
       </div>
 
       <button id="registerButton" type="button" class="button1" onclick="doRegister();">Register</button>
