@@ -13,15 +13,14 @@ function doLogin() {
 
   let inputUsername = document.getElementById("usernameInput").value;
   let inputPassword = document.getElementById("passwordInput").value;
-  //	var hash = md5( password );
 
   document.getElementById("loginResult").innerHTML = "";
 
   let tmp = {
     username: inputUsername,
-    password: inputPassword,
+    password: md5(inputPassword)
   };
-  //	var tmp = {login:login,password:hash};
+
   let jsonPayload = JSON.stringify(tmp);
 
   let url = urlBase + "/Login." + extension;
@@ -62,9 +61,15 @@ function doRegister() {
   let inputPhone = document.getElementById("phoneInputRegister").value;
   let inputUsername = document.getElementById("usernameInputRegister").value;
   let inputPassword = document.getElementById("passwordInputRegister").value;
-  let hash = md5(password);
 
-  alert(hash);
+  if (inputPassword.length < 4)
+  {
+    usernameError.textContent = "Password must be at least 4 characters.";
+    usernameError.className = "error";
+    passwordInputRegister.style.borderColor = "red";
+    passwordInputRegister.style.borderWidth = "2px";
+    return;
+  }
 
   if (inputUsername.length < 4)
   {
@@ -81,9 +86,8 @@ function doRegister() {
     // phone: inputPhone.replace(/^(\d{3})(\d{3})(\d{4})$/g, '($1)-$2-$3'),
     phone: inputPhone,
     username: inputUsername,
-    password: inputPassword,
+    password: md5(inputPassword),
   };
-  //	var tmp = {login:login,password:hash};
 
   let jsonPayload = JSON.stringify(tmp);
 
