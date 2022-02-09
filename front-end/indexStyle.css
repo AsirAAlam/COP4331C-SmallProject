@@ -57,8 +57,9 @@ input:focus::placeholder {
 }
 
 .loginbox input{
-color:black;
+  color:black;
 }
+
 .loginbox input[type="text"],
 input[type="password"] {
   border: 0px solid #555;
@@ -70,36 +71,8 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-::placeholder {
-  color: gray;
-  opacity: 1;
-}
-
-.loginbox input[type="submit"] {
-  border: none;
-  outline: none;
-  width: 125px;
-  height: 30px;
-  background: rgb(15, 15, 15);
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
-
 .buttons {
   margin-top: 35px;
-}
-
-.action_btn {
-  margin-bottom: 5px;
-  border: none;
-  width: 125px;
-  height: 30px;
-  display: inline-block;
-  border-radius: 60px;
-  cursor: pointer;
-  background: rgb(15, 15, 15);
-  color: #fff;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
@@ -147,35 +120,4 @@ input[type="password"] {
 
 .button2:hover {
   background-color: rgb(250, 229, 175);
-}
-
-.center{
-display:block;
-margin-left:auto;
-margin-right:auto;
-width:100%;
-}
-
-.input-icons i {
-position: absolute;
-}
-          
-.input-icons {
-width: 100%;
-margin-bottom: 10px;
-}
-          
-.icon {
-padding: 10px;
-min-width: 40px;
-}
-          
-.input-field {
-width: 100%;
-padding: 10px;
-text-align: center;
-}
-
-#showpassword{
-text-align:left;
 }
