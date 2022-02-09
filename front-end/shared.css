@@ -3,3 +3,7 @@
   font-size: 15px;
   font-weight: bold;
 }
+
+h1, h2 {
+  font-family: 'Philosopher', sans-serif;
+}
