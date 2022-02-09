@@ -36,6 +36,10 @@ input:focus::placeholder {
   border: 3px solid #555;
 }
 
+.loginbox .left{
+padding: 0px 0px;
+}
+
 .loginbox h1 {
   font-size: 30px;
   font-family: sans-serif;
@@ -68,10 +72,9 @@ input:focus::placeholder {
   margin-top: 30px;
 }
 
-.loginbox input {
-  width: 100%;
+.loginbox input{
+color:black;
 }
-
 .loginbox input[type="text"],
 input[type="password"] {
   border: 0px solid #555;
@@ -127,6 +130,11 @@ a {
   cursor: pointer;
   background: #ffc187;
   color: #000;
+}
+
+.loginbox input[type="checkbox"]
+{
+color:black;
 }
 
 .loginbox a {
@@ -192,4 +200,28 @@ display:block;
 margin-left:auto;
 margin-right:auto;
 width:100%;
+}
+
+.input-icons i {
+position: absolute;
+}
+          
+.input-icons {
+width: 100%;
+margin-bottom: 10px;
+}
+          
+.icon {
+padding: 10px;
+min-width: 40px;
+}
+          
+.input-field {
+width: 100%;
+padding: 10px;
+text-align: center;
+}
+
+#showpassword{
+text-align:left;
 }

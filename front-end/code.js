@@ -375,6 +375,10 @@ function updateContactTable(arrayOfContacts) {
     let editButton = document.createElement("button");
     editButton.className = "modifyContact";
     editButton.innerText = "Edit";
+    editButton.style.backgroundColor = "white";
+    editButton.style.color = "green";
+    editButton.style.borderRadius = "4px";
+
     editButton.addEventListener("click", function(event) {
       event.preventDefault();
       contactId = contact["contact_id"];
@@ -440,28 +444,30 @@ function searchContacts() {
   //     $("#Search_ContactManager").click();
   //   }
   // });
+  
 
-  document.getElementById("searchKeywordInput")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("Search_ContactManager").click();
-    }
-  });
 
-  document.getElementById("usernameInput")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-      document.getElementById("loginButton").click();
-    }
-  });
+document.getElementById("searchKeywordInput")
+  .addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+      document.getElementById("Search_ContactManager").click();
+  }
+});
 
-  document.getElementById("passwordInput")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-      document.getElementById("loginButton").click();
-    }
-  });
+document.getElementById("usernameInput")
+  .addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById("loginButton").click();
+  }
+});
+
+document.getElementById("passwordInput")
+  .addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById("loginButton").click();
+  }
+});
 }
