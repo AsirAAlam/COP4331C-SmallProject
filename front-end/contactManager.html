@@ -13,7 +13,7 @@
 <body id="contact_manager_body" onload="loadContactManager()">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
       <a href="#" class="navbar-brand">LAMPorghini</a>
 
@@ -37,15 +37,22 @@
     <h3>Search By Name:</h3>
   </div>
 
-  <div class="container">
-
-    <div class="input-group mb-3">
-      <input id="searchKeywordInput" type="text" class="form-control" placeholder="Search by name" aria-label="Search by name" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button id="Search_ContactManager" type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="searchContacts();">Search</button>
-        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
+  
+  <div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-5">
+        <div class="input-group mb-3">
+          <input id="searchKeywordInput" type="text" class="form-control" placeholder="Search by name" aria-label="Search by name" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button id="Search_ContactManager" type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="searchContacts();">Search</button>
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
+          </div>
+        </div>
       </div>
+      <div class="col"></div>
     </div>
+    
 
     <!-- Hidden button used to display edit modal -->
     <button id="Edit_Contact" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editModal" style="display:none;">Edit</button>
