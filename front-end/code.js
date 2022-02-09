@@ -31,7 +31,6 @@ function doLogin() {
   xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   try {
     xhr.onreadystatechange = function () {
-      document.getElementById("loginResult").innerHTML = this.status;
       if (this.readyState == 4 && this.status == 200) {
         let jsonObject = JSON.parse(xhr.responseText);
         userId = jsonObject.user_id;
@@ -39,9 +38,9 @@ function doLogin() {
         if (userId < 1) {
           document.getElementById("loginResult");
           loginResult.textContent = "User/Password combination incorrect.";
-	  loginResult.style.color = "red";
-	  loginResult.style.fontSize = "15px";
-	  loginResult.style.fontWeight = "bold";
+          loginResult.style.color = "red";
+          loginResult.style.fontSize = "15px";
+          loginResult.style.fontWeight = "bold";
           return;
         }
 
