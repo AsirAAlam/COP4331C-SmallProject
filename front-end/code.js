@@ -49,7 +49,7 @@ function doLogin() {
         userId = jsonObject.user_id;
         saveCookie();
 
-        window.location.href = "./contact_manager.html";
+        window.location.href = "./contactManager.html";
       }
     };
     xhr.send(jsonPayload);

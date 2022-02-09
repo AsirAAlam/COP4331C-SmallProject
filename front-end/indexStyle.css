@@ -126,7 +126,7 @@ a {
   margin-right: 4px;
 }
 
-.loginbox input[type="submit"]:hover {
+/* .loginbox input[type="submit"]:hover {
   cursor: pointer;
   background: #ffc187;
   color: #000;
@@ -135,7 +135,7 @@ a {
 .loginbox input[type="checkbox"]
 {
 color:black;
-}
+} */
 
 .loginbox a {
   text-decoration: none;
