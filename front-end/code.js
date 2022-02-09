@@ -329,10 +329,10 @@ function createContactsTable(contactListDiv) {
   contactTable.className = "contactTable";
 
   let tableHead = document.createElement("thead"); // Creates the table header group element
-  tableHead.className = "tableHead";
+  tableHead.className = "tableHead marcellus";
 
   let headerRow = document.createElement("tr"); // Creates the row that will contain the headers
-  headerRow.className = "headerRow";
+  headerRow.className = "headerRow marcellus";
 
   // Will iterate over all the strings in the tableHeader array and will append the header cells to the table header row
   tableHeaders.forEach((header) => {

@@ -13,6 +13,9 @@
   <!-- Philosopher Font -->
   <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
 
+  <!-- Marcellus Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
   <!-- Our Sheets -->
   <link rel="stylesheet" tyle="text/css" href="contactManagerStyle.css" />
   <link rel="stylesheet" tyle="text/css" href="shared.css" />
@@ -41,18 +44,20 @@
     </div>
   </nav>
 
+  <!-- Used to add space -->
+  <div class="mb-5 row"></div>
+  
   <div class="text-center">
-    <h1>Contact Manager</h1>
-    <h3>Search By Name:</h3>
+    <h1 class="philosopher">Contact Manager</h1>
+    <h3 class="marcellus">Search By Name:</h3>
   </div>
 
-  
   <div>
     <div class="row">
       <div class="col"></div>
       <div class="col-5">
         <div class="input-group mb-3">
-          <input id="searchKeywordInput" type="text" class="form-control" placeholder="Search by name" aria-label="Search by name" aria-describedby="basic-addon2">
+          <input id="searchKeywordInput" type="text" class="form-control marcellus" placeholder="Search by name" aria-label="Search by name" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button id="Search_ContactManager" type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="searchContacts();">Search</button>
             <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
