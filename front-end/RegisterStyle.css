@@ -9,6 +9,10 @@ body {
   background-attachment: fixed;
 }
 
+.registerBox {
+  backdrop-filter: blur(2px);
+}
+
 .container {
   width: 370px;
   height: 530px;
