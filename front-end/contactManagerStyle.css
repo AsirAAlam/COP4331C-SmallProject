@@ -39,7 +39,13 @@ body {
 
 .modifyContact {
   color: rgb(15, 15, 15);
-  background-color: white;
-  color: green;
-  border-radius: 4px;
+  background-color: #B7E4C7;
+  color: black;
+  border-radius: 10px;
+}
+
+.modifyContact:hover {
+  color: rgb(15, 15, 15);
+  background-color: #081C15;
+  color: #D8F3DC;
 }
