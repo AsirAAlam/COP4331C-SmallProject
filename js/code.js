@@ -64,11 +64,16 @@ function doRegister() {
 
   if (inputPassword.length < 4)
   {
-    usernameError.textContent = "Password must be at least 4 characters.";
-    usernameError.className = "error";
+    passwordError.textContent = "Password must be at least 4 characters.";
+    passwordError.className = "error";
     passwordInputRegister.style.borderColor = "red";
     passwordInputRegister.style.borderWidth = "2px";
     return;
+  }
+  else
+  {
+    passwordError.textContent = "";
+    passwordInputRegister.style.borderWidth = "0px";
   }
 
   if (inputUsername.length < 4)
@@ -78,6 +83,11 @@ function doRegister() {
     usernameInputRegister.style.borderColor = "red";
     usernameInputRegister.style.borderWidth = "2px";
     return;
+  }
+  else
+  {
+    usernameError.textContent = "";
+    usernameInputRegister.style.borderWidth = "0px";
   }
 
   let tmp = {
