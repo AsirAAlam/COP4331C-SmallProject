@@ -39,15 +39,7 @@ body {
 
 .modifyContact {
   color: rgb(15, 15, 15);
+  background-color: white;
+  color: green;
+  border-radius: 4px;
 }
-
-/* .contactTable td,
-  th {
-  border-left: solid black 1px;
-  border-top: solid black 1px;
-}
-
-.contactTable td:first-child,
-  th:first-child {
-  border-left: none;
-} */

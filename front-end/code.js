@@ -373,19 +373,16 @@ function updateContactTable(arrayOfContacts) {
     let editButton = document.createElement("button");
     editButton.className = "modifyContact";
     editButton.innerText = "Edit";
-    editButton.style.backgroundColor = "white";
-    editButton.style.color = "green";
-    editButton.style.borderRadius = "4px";
 
     editButton.addEventListener("click", function(event) {
       event.preventDefault();
       contactId = contact["contact_id"];
       saveCookie();
-      document.getElementById("Edit_Contact").click();
       document.getElementById("editInputFirst").value = contact["first_name"];
       document.getElementById("editInputLast").value = contact["last_name"];
       document.getElementById("editInputPhone").value = contact["phone"];
       document.getElementById("editInputEmail").value = contact["email"];
+      document.getElementById("Edit_Contact").click();
     });
     editCell.append(editButton);
 
