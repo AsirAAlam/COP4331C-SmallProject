@@ -62,7 +62,9 @@ function doRegister() {
   let inputPhone = document.getElementById("phoneInputRegister").value;
   let inputUsername = document.getElementById("usernameInputRegister").value;
   let inputPassword = document.getElementById("passwordInputRegister").value;
-  //	var hash = md5( password );
+  let hash = md5(password);
+
+  alert(hash);
 
   if (inputUsername.length < 4)
   {
@@ -121,7 +123,6 @@ function doAddContact() {
   let inputLastname = document.getElementById("addInputLast").value;
   let inputPhone = document.getElementById("addInputPhone").value;
   let inputEmail = document.getElementById("addInputEmail").value;
-  //	var hash = md5( password );
   document.getElementById("addInputFirst").value = "";
   document.getElementById("addInputLast").value = "";
   document.getElementById("addInputPhone").value = "";
