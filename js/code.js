@@ -489,9 +489,9 @@ function loadContactManager() {
   document.getElementById("searchKeywordInput")
     .addEventListener("keyup", function(event) {
     event.preventDefault();
-    if (event.keyCode === 13) {
+    //if (event.keyCode === 13) {
       document.getElementById("Search_ContactManager").click();
-    }
+    //}
   });
 
   // Enter to add contact
