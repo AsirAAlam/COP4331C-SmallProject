@@ -1,5 +1,7 @@
 
 <?php
+	require_once("LoadEnv.php");
+
 	$inData = getRequestInfo();
 
 	$contact_id = $inData['contact_id'];
@@ -8,7 +10,7 @@
 	$phone = $inData['phone'];
 	$email = $inData['email'];
 
-	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
+	$conn = (new LoadEnv(__DIR__.'/../../.env', __DIR__.'/../../.key'))->load();;
 	if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );
