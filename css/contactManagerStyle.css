@@ -1,5 +1,5 @@
-.navbar-custom {
-  background-color: #A7754D;
+.navbar {
+  background-color: #654321;
 }
 
 .navbar-brand {
@@ -31,12 +31,62 @@ h1 {
   background-color: #DCCCBB;
   color: #A7754D;
   border: 2px solid #A7754D;
+  padding: 8px 20px;
+  border-radius: 4px;
 }
 
 .btn:hover {
   background-color: #A7754D;
   color: white;
   border: 2px solid #A7754D;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.delete {
+  background-color: #DCCCBB;
+  color: #e60000;
+  padding: 8px 20px;
+  border: 2px solid #e60000;
+  border-radius: 4px;
+}
+
+.delete:hover {
+  background-color: #e60000;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.save {
+  background-color: #DCCCBB;
+  color: #646E78;
+  padding: 8px 20px;
+  border: 2px solid #646E78;
+  border-radius: 4px;
+}
+
+.save:hover {
+  background-color: #7f8b9c;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.cancel {
+  background-color: #DCCCBB;
+  color: #A7754D;
+  padding: 8px 20px;
+  border: 2px solid #A7754D;
+  border-radius: 4px;
+}
+
+.cancel:hover {
+  background-color: #A7754D;
+  color: white;
+  padding: 8px 20px;
+  border: 2px solid #A7754D;
+  border-radius: 4px;
 }
 
 .contactTable {
