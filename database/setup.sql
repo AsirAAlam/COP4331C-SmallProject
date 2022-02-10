@@ -1,5 +1,5 @@
 create database [name];
-create user lampy identified by '[password]';
+create user [username] identified by '[password]';
 grant all privileges on [name].* to '[username]'@'localhost' identified by '[password]' with grant option;
 flush privileges;
 use [name];
