@@ -16,7 +16,9 @@
       WHERE user_id=$user_id
       AND (first_name LIKE '%$name%'
       OR last_name LIKE '%$name%'
-      OR CONCAT(first_name, ' ', last_name) LIKE '%$name%')
+      OR CONCAT(first_name, ' ', last_name) LIKE '%$name%'
+      OR email LIKE '%$name%'
+      OR phone LIKE '%$name%')
       ORDER BY first_name, last_name, phone, email, user_id, contact_id;
     ");
 		$stmt->execute();
