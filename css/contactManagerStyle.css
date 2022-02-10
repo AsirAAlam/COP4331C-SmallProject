@@ -1,22 +1,21 @@
 .navbar-custom {
-  background-color: #EAB464;
+  background-color: #A7754D;
 }
 
 .navbar-brand {
-  color: #A7754D;
+  color: white;
 }
 
 .navbar-brand:hover {
-  color: #A7754D;
-  border: #A7754D;
+  color: white;
 }
 
 .nav-link {
-  color: #A7754D;
+  color: white;
 }
 
 .nav-link:hover {
-  color: #A7754D;
+  color: white;
 }
 
 body {
@@ -86,4 +85,12 @@ h1 {
   color: rgb(15, 15, 15);
   background-color: #7f8b9c;
   color: white;
+}
+
+.modal-content {
+  background-color: #DCCCBB;
+}
+
+.modal-title {
+  color: #A7754D
 }
