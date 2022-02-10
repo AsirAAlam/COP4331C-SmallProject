@@ -496,6 +496,9 @@ function loadRegister() {
 }
 
 function loadContactManager() {
+  readCookie();
+  document.getElementById("contactManagerh1").innerHTML = `${firstName} ${lastName}'s Contact Manager`;
+
   searchContacts();
 
   // Enter to search
