@@ -7,8 +7,6 @@ body {
   font-family: sans-serif;
   background-attachment: fixed;
   background-size: cover;
-  
- 
 }
 
 input:focus::placeholder {
@@ -86,7 +84,7 @@ input[type="password"] {
 
 /* https://coolors.co/palette/ff7b00-ff8800-ff9500-ffa200-ffaa00-ffb700-ffc300-ffd000-ffdd00-ffea00 */
 .button1 {
-  background-color: #ffd000;
+  background-color: #EAB464;
   border: #ffd000;
   color: black;
   padding: 12px 34px;
@@ -101,7 +99,7 @@ input[type="password"] {
 }
 
 .button2 {
-  background-color: #ff9500;
+  background-color: #A7754D;
   border: #ff9500;
   color: black;
   padding: 12px 34px;
