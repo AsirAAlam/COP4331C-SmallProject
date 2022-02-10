@@ -27,7 +27,7 @@
 <body id="contact_manager_body" onload="loadContactManager()">
 
   <!-- Navbar -->
-  <nav class="navbar-custom navbar-expand-md">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
       <a href="#" class="navbar-brand philosopher">LAMPorghini</a>
 
@@ -103,9 +103,8 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveAddContactBtn" onclick="doAddContact();">
-            Save Changes</button>
+          <button type="button" class="save" data-bs-dismiss="modal" id="saveAddContactBtn" onclick="doAddContact();">
+            Save</button>
         </div>
       </div>
     </div>
@@ -134,9 +133,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
-          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="saveEditContactBtn" onclick="doEditContact();">Save Changes</button>
+          <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+          <button type="button" class="save" data-bs-dismiss="modal" id="saveEditContactBtn" onclick="doEditContact();">Save</button>
         </div>
       </div>
     </div>
@@ -151,8 +149,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="doDeleteContact();">Delete</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="delete" data-bs-dismiss="modal" onclick="doDeleteContact();">Delete</button>
+            <button type="button" class="cancel" data-bs-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
