@@ -82,7 +82,7 @@ input:focus::placeholder {
 }
 
 .button1:hover {
-  background-color: rgb(250, 229, 175);
+  background-color: #C4A484;
 }
 
 .button2:hover {
