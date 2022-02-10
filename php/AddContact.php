@@ -1,13 +1,15 @@
 <?php
+	require_once("LoadEnv.php");
+	
 	$inData = getRequestInfo();
 
-  $user_id = $inData["user_id"];
+  	$user_id = $inData["user_id"];
 	$first_name = $inData["first_name"];
 	$last_name = $inData["last_name"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
 
-	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
+	$conn = (new LoadEnv(__DIR__.'/../../.env', __DIR__.'/../../.key'))->load();
 	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
