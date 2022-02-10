@@ -1,5 +1,6 @@
 
 <?php
+	require_once("LoadEnv.php");
 	date_default_timezone_set('America/New_York');
 
 	$inData = getRequestInfo();
@@ -9,7 +10,7 @@
 	$last_name = "";
 	$phone = 0;
 
-	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
+	$conn = (new LoadEnv(__DIR__.'/../../.env', __DIR__.'/../../.key'))->load();
 	if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );
