@@ -24,10 +24,10 @@
 		if( $row = $result->fetch_assoc()  )
 		{
 			$conn->query("
-        UPDATE contacts 
-        SET first_name = '$first_name', last_name = '$last_name', phone = '$phone', email = '$email'
-        WHERE contact_id = $contact_id 
-      ");
+       				 UPDATE contacts 
+        			 SET first_name = '$first_name', last_name = '$last_name', phone = '$phone', email = '$email'
+        			 WHERE contact_id = $contact_id 
+      				 ");
 			returnWithError("");
 		}
 		else
