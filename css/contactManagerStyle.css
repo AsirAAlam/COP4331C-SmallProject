@@ -1,5 +1,43 @@
+.navbar-custom {
+  background-color: #EAB464;
+}
+
+.navbar-brand {
+  color: #A7754D;
+}
+
+.navbar-brand:hover {
+  color: #A7754D;
+  border: #A7754D;
+}
+
+.nav-link {
+  color: #A7754D;
+}
+
+.nav-link:hover {
+  color: #A7754D;
+}
+
 body {
-  background-color: #D8F3DC;
+  background-color: #DCCCBB;
+}
+
+h1 {
+  color: #A7754D;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #DCCCBB;
+  color: #A7754D;
+  border: 2px solid #A7754D;
+}
+
+.btn:hover {
+  background-color: #A7754D;
+  color: white;
+  border: 2px solid #A7754D;
 }
 
 .contactTable {
@@ -9,14 +47,14 @@ body {
   text-align: center;
   font-size: 1.2em;
   color: whitesmoke;
-  background-color: #52B788;
+  background-color: #8D98A7;
   border-collapse: separate;
   border: solid black 1px;
   border-radius: 6px;
 }
 
 .headerRow {
-  background-color: #2D6A4F;
+  background-color: #646E78;
   color: white;
   font-weight: bold;
   font-size: 1.5em;
@@ -25,12 +63,12 @@ body {
 }
 
 .bodyRow:nth-child(odd) {
-  background-color: #40916C;
+  background-color: #7f8b9c;
 }
 
 .bodyRow:hover {
   color: black;
-  background-color: #D8F3DC;
+  background-color: #b8bfc8;
 }
 
 .contactTable tr td {
@@ -39,14 +77,13 @@ body {
 
 .modifyContact {
   color: rgb(15, 15, 15);
-  background-color: #B7E4C7;
-  color: black;
-  border-radius: 10px;
-  text: &#9998;
+  background-color: #646E78;
+  color: white;
+  border-radius: 6px;
 }
 
 .modifyContact:hover {
   color: rgb(15, 15, 15);
-  background-color: #081C15;
-  color: #D8F3DC;
+  background-color: #7f8b9c;
+  color: white;
 }
