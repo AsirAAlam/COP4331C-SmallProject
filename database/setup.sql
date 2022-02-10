@@ -1,6 +1,6 @@
 create database [db];
 create user '[username]'@'localhost' identified by '[password]';
-grant select,insert,update,delete on [db].* to '[username]'@'localhost';
+grant select,insert,update,delete on [db].* to '[username]'@'localhost'; # Only granting the required privileges to database user
 flush privileges;
 use [db];
 
