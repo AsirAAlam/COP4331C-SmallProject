@@ -16,7 +16,7 @@
 	}
 	else
 	{
-    $srch = $conn->prepare("SELECT * FROM users WHERE username=?");
+    		$srch = $conn->prepare("SELECT * FROM users WHERE username=?");
 		$srch->bind_param("s", $username);
 		$srch->execute();
 		$result = $srch->get_result();
