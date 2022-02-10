@@ -61,6 +61,22 @@ function doRegister() {
   let inputPhone = document.getElementById("phoneInputRegister").value;
   let inputUsername = document.getElementById("usernameInputRegister").value;
   let inputPassword = document.getElementById("passwordInputRegister").value;
+  
+  let valid = true;
+  
+  if (inputUsername.length < 4)
+  {
+    usernameError.textContent = "Username must be at least 4 characters.";
+    usernameError.className = "error";
+    usernameInputRegister.style.borderColor = "red";
+    usernameInputRegister.style.borderWidth = "2px";
+    valid = false;
+  }
+  else
+  {
+    usernameError.textContent = "";
+    usernameInputRegister.style.borderWidth = "0px";
+  }
 
   if (inputPassword.length < 4)
   {
@@ -68,27 +84,15 @@ function doRegister() {
     passwordError.className = "error";
     passwordInputRegister.style.borderColor = "red";
     passwordInputRegister.style.borderWidth = "2px";
-    return;
+    valid = false;
   }
   else
   {
     passwordError.textContent = "";
     passwordInputRegister.style.borderWidth = "0px";
   }
-
-  if (inputUsername.length < 4)
-  {
-    usernameError.textContent = "Username must be at least 4 characters.";
-    usernameError.className = "error";
-    usernameInputRegister.style.borderColor = "red";
-    usernameInputRegister.style.borderWidth = "2px";
-    return;
-  }
-  else
-  {
-    usernameError.textContent = "";
-    usernameInputRegister.style.borderWidth = "0px";
-  }
+  
+  if (!valid) return;
 
   let tmp = {
     first_name: inputFirstname,
@@ -141,6 +145,12 @@ function doAddContact() {
   document.getElementById("addInputLast").value = "";
   document.getElementById("addInputPhone").value = "";
   document.getElementById("addInputEmail").value = "";
+  
+  let isnum = /^\d+$/.test(inputPhone);
+  
+  if (!isnum) {
+    console.log("Phone number must only contain numeric digits");
+  }
 
   readCookie();
   // document.getElementById("addContactResult").innerHTML = "clicked add contact2";
@@ -170,15 +180,13 @@ function doAddContact() {
         let jsonObject = JSON.parse(xhr.responseText);
         error = jsonObject.error;
 
-        document.getElementById("addContactResult").innerHTML =
-          "Contact successfully added.";
-
         saveCookie();
       }
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("addContactResult").innerHTML = err.message;
+    //document.getElementById("addContactResult").innerHTML = err.message;
+    console.log(err);
   }
 
   document.getElementById("searchKeywordInput").value = "";
