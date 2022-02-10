@@ -51,7 +51,8 @@ function doLogin() {
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("loginResult").innerHTML = err.message;
+    // document.getElementById("loginResult").innerHTML = err.message;
+    console.log(err.message);
   }
 }
 
@@ -132,7 +133,8 @@ function doRegister() {
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("signupResult").innerHTML = err.message;
+    // document.getElementById("signupResult").innerHTML = err.message;
+    console.log(err.message);
   }
 }
 
@@ -186,7 +188,7 @@ function doAddContact() {
     xhr.send(jsonPayload);
   } catch (err) {
     //document.getElementById("addContactResult").innerHTML = err.message;
-    console.log(err);
+    console.log(err.message);
   }
 
   document.getElementById("searchKeywordInput").value = "";
@@ -232,15 +234,16 @@ function doEditContact() {
         let jsonObject = JSON.parse(xhr.responseText);
         error = jsonObject.error;
 
-        document.getElementById("editContactResult").innerHTML =
-          "Contact successfully updated.";
+        // document.getElementById("editContactResult").innerHTML =
+        //   "Contact successfully updated.";
 
         saveCookie();
       }
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("editContactResult").innerHTML = err.message;
+    //document.getElementById("editContactResult").innerHTML = err.message;
+    console.log(err.message);
   }
 
   document.getElementById("searchKeywordInput").value = "";
@@ -276,15 +279,16 @@ function doDeleteContact() {
         let jsonObject = JSON.parse(xhr.responseText);
         error = jsonObject.error;
 
-        document.getElementById("deleteContactResult").innerHTML =
-          "Contact successfully deleted.";
+        // document.getElementById("deleteContactResult").innerHTML =
+        //   "Contact successfully deleted.";
 
         saveCookie();
       }
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("deleteContactResult").innerHTML = err.message;
+    // document.getElementById("deleteContactResult").innerHTML = err.message;
+    console.log(err.message);
   }
 
   document.getElementById("searchKeywordInput").value = "";
@@ -447,7 +451,8 @@ function searchContacts() {
     };
     xhr.send(jsonPayload);
   } catch (err) {
-    document.getElementById("searchResult").innerHTML = err.message;
+    //document.getElementById("searchResult").innerHTML = err.message;
+    console.log(err.message);
   }
 }
 
