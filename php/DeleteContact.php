@@ -1,16 +1,18 @@
 <?php
+	require_once("LoadEnv.php");
+
 	$inData = getRequestInfo();
 
-  $contact_id = $inData["contact_id"];
+  	$contact_id = $inData["contact_id"];
 
-	$conn = new mysqli("localhost", "lampy", "P@ssw0rd", "lamp");
+	$conn = (new LoadEnv(__DIR__.'/../../.env', __DIR__.'/../../.key'))->load();
 	if ($conn->connect_error)
 	{
 		returnWithError( $conn->connect_error );
 	}
 	else
 	{
-    $stmt = $conn->prepare("SELECT contact_id FROM contacts WHERE contact_id=$contact_id");
+   		$stmt = $conn->prepare("SELECT contact_id FROM contacts WHERE contact_id=$contact_id");
 		$stmt->execute();
 		$result = $stmt->get_result();
 
