@@ -1,8 +1,8 @@
-create database lamp;
-create user lampy identified by 'P@ssw0rd';
-grant all privileges on lamp.* to 'lampy'@'localhost' identified by 'P@ssw0rd' with grant option;
+create database [name];
+create user lampy identified by '[password]';
+grant all privileges on [name].* to '[username]'@'localhost' identified by '[password]' with grant option;
 flush privileges;
-use lamp;
+use [name];
 
 create table users
 (
