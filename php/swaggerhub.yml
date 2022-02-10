@@ -15,7 +15,7 @@ paths:
       - Users
       summary: Logs in to Contact Manager
       operationId: doLogin
-      description: Logs in to Contact Manager
+      description: Logs in to an account with the given username and password pair.
       consumes:
       - application/json
       produces:
@@ -39,7 +39,7 @@ paths:
       - Users
       summary: Adds a new User
       operationId: addUser
-      description: Adds a new User
+      description: Adds a new user with the given registration information.
       consumes:
       - application/json
       produces:
@@ -63,7 +63,7 @@ paths:
       - Contacts
       summary: Adds a new contact
       operationId: addContact
-      description: Adds a new contact
+      description: Adds a new contact to the account associated with the given user id.
       consumes:
       - application/json
       produces:
@@ -87,7 +87,7 @@ paths:
       - Contacts
       summary: Deletes an existing contact
       operationId: deleteContact
-      description: Deletes an existing contact
+      description: Deletes an existing contact by contact id.
       consumes:
       - application/json
       produces:
@@ -135,7 +135,7 @@ paths:
       - Contacts
       summary: Contacts search query
       operationId: searchContact
-      description: Searches for a list of contacts by full name.
+      description: Returns a list of contacts by name, phone, and email.
       consumes:
       - application/json
       produces:
@@ -204,7 +204,7 @@ definitions:
     properties:
       user_id:
         type: integer
-        example: 4
+        example: 65
       first_name:
         type: string
         example: "John"
@@ -216,7 +216,7 @@ definitions:
         example: "123-456-7890"
       email:
         type: string
-        example: "john@cena.com"
+        example: "john@seenah.com"
 
   DeleteContact:
     type: object
